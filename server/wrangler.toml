@@ -1,16 +1,16 @@
 name = "preklead-server"
 main = "src/index.ts"
-compatibility_date = "2025-01-15"
-node_compat = true
+compatibility_date = "2026-01-01"
+compatibility_flags = ["nodejs_compat"]
 
 [[d1_databases]]
 binding = "DB"
 database_name = "preklead-db"
-database_id = "local"
+database_id = "181471ab-db7f-4ddc-979c-c13695ef0e01"
 
 [[kv_namespaces]]
 binding = "KV"
-id = "local"
+id = "30d45c59486f4a21a16bf6541e0e25c3"
 
 [[r2_buckets]]
 binding = "R2"
@@ -24,4 +24,4 @@ SMTP_EMAIL = ""
 SMTP_PASSWORD = ""
 TELEGRAM_API_ID = ""
 TELEGRAM_API_HASH = ""
-APP_URL = "http://localhost:5173"
+APP_URL = "https://preklead.pages.dev"
