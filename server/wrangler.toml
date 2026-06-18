@@ -1,0 +1,27 @@
+name = "preklead-server"
+main = "src/index.ts"
+compatibility_date = "2025-01-15"
+node_compat = true
+
+[[d1_databases]]
+binding = "DB"
+database_name = "preklead-db"
+database_id = "local"
+
+[[kv_namespaces]]
+binding = "KV"
+id = "local"
+
+[[r2_buckets]]
+binding = "R2"
+bucket_name = "preklead-assets"
+
+[ai]
+binding = "AI"
+
+[vars]
+SMTP_EMAIL = ""
+SMTP_PASSWORD = ""
+TELEGRAM_API_ID = ""
+TELEGRAM_API_HASH = ""
+APP_URL = "http://localhost:5173"
