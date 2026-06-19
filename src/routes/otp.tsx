@@ -1,5 +1,5 @@
 import { createFileRoute, useNavigate } from "@tanstack/react-router";
-import { AuthLayout } from "./auth";
+import { Logo } from "@/components/Brand";
 import { useEffect, useRef, useState } from "react";
 
 export const Route = createFileRoute("/otp")({
@@ -21,7 +21,7 @@ function OtpPage() {
 
   useEffect(() => {
     if (code.every((c) => c !== "")) {
-      setTimeout(() => nav({ to: "/app" }), 600);
+      setTimeout(() => nav({ to: "/app" }), 400);
     }
   }, [code, nav]);
 
@@ -34,28 +34,42 @@ function OtpPage() {
   };
 
   return (
-    <AuthLayout title="Введите код" subtitle="Мы отправили 4-значный код на вашу почту">
-      <div className="flex gap-3 justify-center">
-        {code.map((v, i) => (
-          <input
-            key={i}
-            ref={(el) => { refs.current[i] = el; }}
-            value={v}
-            onChange={(e) => setDigit(i, e.target.value)}
-            onKeyDown={(e) => e.key === "Backspace" && !v && i > 0 && refs.current[i - 1]?.focus()}
-            maxLength={1}
-            inputMode="numeric"
-            className="size-14 text-center text-2xl font-display font-semibold bg-input/40 border border-border rounded-xl focus:outline-none focus:ring-2 focus:ring-primary/50"
-          />
-        ))}
+    <div className="min-h-screen flex flex-col items-center justify-center p-6">
+      <div className="w-full max-w-sm mx-auto text-center">
+        <div className="mb-8 flex justify-center">
+          <a href="/"><Logo /></a>
+        </div>
+        <h1 className="text-xl font-semibold tracking-tight mb-1">Введите код</h1>
+        <p className="text-sm text-muted-foreground mb-8">
+          Мы отправили 4-значный код на вашу почту
+        </p>
+
+        <div className="flex gap-3 justify-center mb-8">
+          {code.map((v, i) => (
+            <input
+              key={i}
+              ref={(el) => { refs.current[i] = el; }}
+              value={v}
+              onChange={(e) => setDigit(i, e.target.value)}
+              onKeyDown={(e) => e.key === "Backspace" && !v && i > 0 && refs.current[i - 1]?.focus()}
+              maxLength={1}
+              inputMode="numeric"
+              autoComplete="one-time-code"
+              className="w-12 h-12 text-center text-lg font-semibold bg-surface border border-border rounded-lg focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary/30"
+            />
+          ))}
+        </div>
+
+        <p className="text-sm text-muted-foreground">
+          {timer > 0 ? (
+            <>Отправить повторно через <span className="font-medium text-foreground">0:{String(timer).padStart(2, "0")}</span></>
+          ) : (
+            <button onClick={() => setTimer(45)} className="text-primary hover:underline font-medium">
+              Отправить код повторно
+            </button>
+          )}
+        </p>
       </div>
-      <div className="mt-6 text-center text-sm text-muted-foreground">
-        {timer > 0 ? (
-          <>Отправить повторно через <span className="font-mono text-foreground">0:{String(timer).padStart(2, "0")}</span></>
-        ) : (
-          <button onClick={() => setTimer(45)} className="text-primary hover:underline">Отправить код повторно</button>
-        )}
-      </div>
-    </AuthLayout>
+    </div>
   );
 }

@@ -1,6 +1,6 @@
 import { createFileRoute, Link, useNavigate } from "@tanstack/react-router";
-import { AuthLayout, Field } from "./auth";
-import { ArrowRight, Check, Sparkles } from "../components/PhosphorIcons";
+import { Logo } from "@/components/Brand";
+import { useState } from "react";
 
 export const Route = createFileRoute("/register")({
   head: () => ({ meta: [{ title: "Регистрация — PREKLEAD" }] }),
@@ -9,51 +9,118 @@ export const Route = createFileRoute("/register")({
 
 function RegisterPage() {
   const nav = useNavigate();
+  const [form, setForm] = useState({
+    email: "",
+    password: "",
+    firstName: "",
+    lastName: "",
+    businessName: "",
+  });
+
+  const update = (field: string, value: string) =>
+    setForm((f) => ({ ...f, [field]: value }));
+
   return (
-    <AuthLayout title="Запустите AI-продажи" subtitle="14 дней бесплатно — без карты и сложной настройки">
-      <div className="mb-5 grid grid-cols-3 gap-2">
-        {["Telegram за 60с", "CRM внутри", "AI 24/7"].map((item) => (
-          <div key={item} className="rounded-2xl border border-primary/15 bg-primary/10 px-2.5 py-2 text-center text-[10px] text-primary/90">
-            <Sparkles size={12} className="mx-auto mb-1" />
-            {item}
-          </div>
-        ))}
-      </div>
-      <form
-        className="space-y-4"
-        onSubmit={(e) => {
-          e.preventDefault();
-          nav({ to: "/otp" });
-        }}
-      >
-        <Field label="Email" type="email" placeholder="you@company.com" />
-        <Field label="Пароль" type="password" placeholder="••••••••" />
-        <div className="grid grid-cols-2 gap-3">
-          <Field label="Имя" placeholder="Алексей" />
-          <Field label="Фамилия" placeholder="Петров" />
+    <div className="min-h-screen grid lg:grid-cols-[1fr_1fr]">
+      <div className="hidden lg:flex flex-col justify-between p-12 bg-surface/50 border-r border-border">
+        <Link to="/" className="w-fit"><Logo /></Link>
+        <div className="max-w-md">
+          <h1 className="text-2xl font-semibold tracking-tight mb-2">
+            Начните бесплатно
+          </h1>
+          <p className="text-sm text-muted-foreground leading-relaxed">
+            14 дней бесплатно. Без привязки карты. 
+            Настройте AI-ассистента за 5 минут.
+          </p>
         </div>
-        <Field label="Название бизнеса" placeholder="Northstar Co" />
-        <Field label="Чем занимается бизнес" textarea placeholder="Например: продажа онлайн-курсов по дизайну" />
-        <Field label="Как узнали о сервисе?" options={["Поиск", "Telegram", "Instagram", "Друг", "Реклама", "Другое"]} />
-        <button className="group w-full mt-2 py-3 rounded-2xl bg-primary text-primary-foreground font-semibold hover:bg-primary-glow transition-all glow-primary flex items-center justify-center gap-2 overflow-hidden relative">
-          <span className="absolute inset-0 bg-gradient-to-r from-transparent via-white/15 to-transparent translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-700" />
-          <span className="relative flex items-center gap-2">Создать аккаунт <ArrowRight size={14} /></span>
-        </button>
-      </form>
-      <div className="mt-5 rounded-2xl border border-border/30 bg-white/[0.03] p-3 text-xs text-muted-foreground/75">
-        <div className="flex items-center gap-2 text-foreground/85 font-medium mb-2">
-          <Check size={14} className="text-success" /> Что будет после регистрации
-        </div>
-        <div className="grid gap-1.5">
-          <span>• подключение первого канала</span>
-          <span>• обучение AI на описании бизнеса</span>
-          <span>• тестовый inbox с демо-лидами</span>
+        <div className="text-xs text-muted-foreground">
+          &copy; 2026 PREKLEAD
         </div>
       </div>
-      <p className="mt-6 text-center text-sm text-muted-foreground">
-        Уже есть аккаунт?{" "}
-        <Link to="/auth" className="text-primary hover:underline">Войти</Link>
-      </p>
-    </AuthLayout>
+
+      <div className="flex items-center justify-center p-6 sm:p-12">
+        <div className="w-full max-w-sm">
+          <div className="lg:hidden mb-8"><Link to="/"><Logo /></Link></div>
+          <h1 className="text-xl font-semibold tracking-tight mb-1">Создать аккаунт</h1>
+          <p className="text-sm text-muted-foreground mb-6">
+            Заполните данные для регистрации
+          </p>
+
+          <form
+            className="space-y-4"
+            onSubmit={(e) => {
+              e.preventDefault();
+              nav({ to: "/otp" });
+            }}
+          >
+            <div>
+              <label className="label">Email</label>
+              <input
+                type="email"
+                value={form.email}
+                onChange={(e) => update("email", e.target.value)}
+                placeholder="you@company.com"
+                required
+                className="input-field"
+              />
+            </div>
+            <div>
+              <label className="label">Пароль</label>
+              <input
+                type="password"
+                value={form.password}
+                onChange={(e) => update("password", e.target.value)}
+                placeholder="Минимум 8 символов"
+                required
+                className="input-field"
+              />
+            </div>
+            <div className="grid grid-cols-2 gap-3">
+              <div>
+                <label className="label">Имя</label>
+                <input
+                  value={form.firstName}
+                  onChange={(e) => update("firstName", e.target.value)}
+                  placeholder="Алексей"
+                  required
+                  className="input-field"
+                />
+              </div>
+              <div>
+                <label className="label">Фамилия</label>
+                <input
+                  value={form.lastName}
+                  onChange={(e) => update("lastName", e.target.value)}
+                  placeholder="Петров"
+                  required
+                  className="input-field"
+                />
+              </div>
+            </div>
+            <div>
+              <label className="label">Название бизнеса</label>
+              <input
+                value={form.businessName}
+                onChange={(e) => update("businessName", e.target.value)}
+                placeholder="Название компании"
+                required
+                className="input-field"
+              />
+            </div>
+
+            <button type="submit" className="btn btn-primary w-full mt-2">
+              Создать аккаунт
+            </button>
+          </form>
+
+          <p className="mt-6 text-center text-sm text-muted-foreground">
+            Уже есть аккаунт?{" "}
+            <Link to="/auth" className="text-primary hover:underline font-medium">
+              Войти
+            </Link>
+          </p>
+        </div>
+      </div>
+    </div>
   );
 }
