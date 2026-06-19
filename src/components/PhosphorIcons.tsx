@@ -125,8 +125,8 @@ import {
   Pencil,
   Archive,
   Info,
-  UserPlus,
-  SlidersHorizontal,
+  UserPlus as UserPlusIcon,
+  SlidersHorizontal as SlidersHorizontalIcon,
   Ban,
   Image,
   LoaderCircle,
@@ -330,7 +330,7 @@ export const PaperPlaneRight = SendIcon;
 export const PaperPlaneTilt = SendIcon;
 export const ChartBar = BarChart3Icon;
 export const ChartLine = LineChartIcon;
-export const ArrowClockwise = RotateCcwIcon;
+export const ArrowClockwise = RefreshCwIcon;
 export const LinkSimple = LinkSimpleIcon;
 export const MapPin = MapPinIcon;
 
@@ -345,8 +345,8 @@ export const InstagramLogo = InstagramIcon;
 export const WhatsappLogo = WhatsAppIcon;
 export const Robot = BotIcon;
 export const Settings = SettingsIcon;
-export const UserPlus = UserPlus;
-export const SlidersHorizontal = SlidersHorizontal;
+export const UserPlus = UserPlusIcon;
+export const SlidersHorizontal = SlidersHorizontalIcon;
 export const User = UserIcon;
 export const Lock = LockIcon;
 export const CreditCard = CreditCardIcon;
