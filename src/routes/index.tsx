@@ -1,7 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { Nav } from "@/components/landing/Nav";
 import { Hero } from "@/components/landing/Hero";
-import { Problem, Solution, RevenueRoom, HowItWorks, Features, StatsBar } from "@/components/landing/Sections";
+import { Problem, Solution, RevenueRoom, HowItWorks, Features } from "@/components/landing/Sections";
 import { Integrations } from "@/components/landing/Integrations";
 import { Pricing } from "@/components/landing/Pricing";
 import { FAQ } from "@/components/landing/FAQ";
@@ -31,7 +31,6 @@ function Index() {
       <HowItWorks />
       <div className="section-glow-divider" />
       <Features />
-      <StatsBar />
       <Integrations />
       <div className="section-glow-divider" />
       <Pricing />
