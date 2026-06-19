@@ -15,6 +15,7 @@ function RegisterPage() {
     firstName: "",
     lastName: "",
     businessName: "",
+    referrer: "",
   });
 
   const update = (field: string, value: string) =>
@@ -106,6 +107,23 @@ function RegisterPage() {
                 required
                 className="input-field"
               />
+            </div>
+
+            <div>
+              <label className="label">Как узнали о сервисе?</label>
+              <select
+                value={form.referrer}
+                onChange={(e) => update("referrer", e.target.value)}
+                className="input-field appearance-none"
+              >
+                <option value="" disabled className="bg-surface text-muted-foreground">Выберите вариант</option>
+                <option value="search" className="bg-surface text-foreground">Поиск</option>
+                <option value="telegram" className="bg-surface text-foreground">Telegram</option>
+                <option value="instagram" className="bg-surface text-foreground">Instagram</option>
+                <option value="friend" className="bg-surface text-foreground">Друг</option>
+                <option value="ads" className="bg-surface text-foreground">Реклама</option>
+                <option value="other" className="bg-surface text-foreground">Другое</option>
+              </select>
             </div>
 
             <button type="submit" className="btn btn-primary w-full mt-2">

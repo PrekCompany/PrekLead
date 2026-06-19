@@ -167,8 +167,8 @@ export function Footer() {
             © 2026 PREKLEAD.
             <div>All links open in a new tab.</div>
           </div>
-          <div className="inline-flex items-center gap-2 rounded-full border border-success/20 bg-success/10 px-3 py-1.5 text-xs text-success/80">
-            <Shield size={13} /> Secure by design
+          <div className="text-xs text-muted-foreground/50">
+            Enterprise-grade security
           </div>
         </div>
       </div>
