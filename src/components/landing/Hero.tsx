@@ -1,12 +1,5 @@
 import { Link } from "@tanstack/react-router";
-import { useEffect, useState } from "react";
-import { ArrowRight, Sparkles, ChatCircle, Shield, SignalFlowIcon, RevenueSparkIcon, TrustGridIcon } from "../PhosphorIcons";
-
-const stats = [
-  { label: "Сообщений обработано", value: "24/7" },
-  { label: "Языков поддержки", value: "50+" },
-  { label: "Среднее время ответа", value: "< 2с" },
-];
+import { ArrowRight, Sparkles, ChatCircle, SignalFlowIcon, RevenueSparkIcon, TrustGridIcon } from "../PhosphorIcons";
 
 const proof = [
   { icon: SignalFlowIcon, label: "3 канала", value: "Telegram · Instagram · WhatsApp" },
@@ -15,13 +8,6 @@ const proof = [
 ];
 
 export function Hero() {
-  const [activeStat, setActiveStat] = useState(0);
-
-  useEffect(() => {
-    const t = setInterval(() => setActiveStat((i) => (i + 1) % stats.length), 3000);
-    return () => clearInterval(t);
-  }, []);
-
   return (
     <section className="relative min-h-screen flex items-center pt-24 pb-16 overflow-hidden">
       {/* Deep gradient background */}
@@ -100,22 +86,6 @@ export function Hero() {
                 Войти
               </Link>
             </div>
-
-            {/* Social proof — enriched grid */}
-            <div className="mt-12 grid grid-cols-2 sm:grid-cols-4 gap-3">
-              {stats.map((s, idx) => (
-                <div
-                  key={idx}
-                  className={`premium-card rounded-xl px-4 py-3 transition-all duration-500 ${
-                    idx === activeStat ? "border-primary/30 glow-primary scale-105" : "opacity-70 hover:opacity-100"
-                  }`}
-                >
-                  <div className="font-display text-xl font-bold text-gradient-primary">{s.value}</div>
-                  <div className="text-[10px] text-muted-foreground/60 mt-0.5">{s.label}</div>
-                </div>
-              ))}
-            </div>
-
 
           </div>
 
