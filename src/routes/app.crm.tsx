@@ -1,7 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { messages, leads } from "@/lib/mock-data";
 import { useState } from "react";
-import { Sparkles, MessageCircle, FileText, DollarSign } from "lucide-react";
+import { Sparkle, ChatCircle, FileText, CurrencyDollar } from "phosphor-react";
 
 export const Route = createFileRoute("/app/crm")({
   head: () => ({ meta: [{ title: "CRM — PREKLEAD" }] }),
@@ -59,7 +59,7 @@ function CRMPage() {
         <div className="grid md:grid-cols-2 gap-4 mt-8">
           <div className="glass rounded-2xl p-5">
             <h3 className="flex items-center gap-2 text-sm font-semibold mb-3">
-              <Sparkles size={14} className="text-primary" /> AI заметки
+              <Sparkle size={14} className="text-primary" /> AI заметки
             </h3>
             <ul className="space-y-2 text-sm text-muted-foreground">
               <li>• Высокий интент покупки — клиент сравнивает тарифы</li>
@@ -71,7 +71,7 @@ function CRMPage() {
 
           <div className="glass rounded-2xl p-5">
             <h3 className="flex items-center gap-2 text-sm font-semibold mb-3">
-              <DollarSign size={14} className="text-success" /> Сделки
+              <CurrencyDollar size={14} className="text-success" /> Сделки
             </h3>
             <div className="space-y-2">
               <Deal name="Pro yearly" status="В работе" amount={client.value} />
@@ -81,7 +81,7 @@ function CRMPage() {
 
           <div className="glass rounded-2xl p-5 md:col-span-2">
             <h3 className="flex items-center gap-2 text-sm font-semibold mb-3">
-              <MessageCircle size={14} className="text-primary" /> История сообщений
+              <ChatCircle size={14} className="text-primary" /> История сообщений
             </h3>
             <div className="space-y-2">
               {conv.thread.map((t, i) => (

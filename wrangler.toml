@@ -1,25 +1,27 @@
-name = "preklead-server"
-main = "src/index.ts"
+name = "preklead"
+pages_build_output_dir = "dist/client"
 compatibility_date = "2026-01-01"
 compatibility_flags = ["nodejs_compat"]
 
+# D1 Database
 [[d1_databases]]
 binding = "DB"
 database_name = "preklead-db"
 database_id = "181471ab-db7f-4ddc-979c-c13695ef0e01"
 
+# KV Sessions
 [[kv_namespaces]]
 binding = "KV"
 id = "30d45c59486f4a21a16bf6541e0e25c3"
 
+# R2 Assets
 [[r2_buckets]]
 binding = "R2"
 bucket_name = "preklead-assets"
 
+# AI Workers
 [ai]
 binding = "AI"
 
 [vars]
 APP_URL = "https://preklead.pages.dev"
-SMTP_EMAIL = "connectionprek@gmail.com"
-SMTP_PASSWORD = "gbxc bmia ljqp ylvh"

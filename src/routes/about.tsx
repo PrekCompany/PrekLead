@@ -1,6 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { Nav } from "@/components/landing/Nav";
 import { Footer } from "@/components/landing/Footer";
+import { BackLink } from "@/components/BackLink";
 
 export const Route = createFileRoute("/about")({
   head: () => ({
@@ -18,6 +19,7 @@ function AboutPage() {
       <Nav />
       <section className="pt-32 pb-20">
         <div className="mx-auto max-w-3xl px-4">
+          <div className="mb-6"><BackLink to="/" /></div>
           <div className="text-xs font-semibold uppercase tracking-widest text-primary mb-3">О нас</div>
           <h1 className="font-display text-4xl md:text-6xl font-semibold text-gradient leading-tight">
             Мы строим AI, который продаёт за вас

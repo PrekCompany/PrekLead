@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { Bot, MessageCircle, Send } from "lucide-react";
+import { Bot, MessageCircle, Send } from "../PhosphorIcons";
 
 const SCRIPT = [
   { from: "client", text: "Привет! У вас есть скидки на годовой тариф?" },

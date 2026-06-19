@@ -34,6 +34,12 @@ dist-ssr
 # Pre-mind-flow (disabled git repo)
 pre-mind-flow/
 
+# Temp / generated
+.playwright-mcp/
+PrekLead.zip
+ENV_SETUP.md
+fix-phosphor.mjs
+
 # OS
 Thumbs.db
 Desktop.ini

@@ -1,13 +1,13 @@
 import { createFileRoute } from "@tanstack/react-router";
 import {
-  MessageCircle,
-  Image,
-  MessageSquare,
+  ChatCircle,
+  ImageSquare,
+  ChatText,
   Plug,
-  Loader2,
+  Spinner,
   Check,
   X,
-} from "lucide-react";
+} from "phosphor-react";
 import { useState } from "react";
 import * as Switch from "@radix-ui/react-switch";
 import * as Tooltip from "@radix-ui/react-tooltip";
@@ -22,7 +22,7 @@ type Integration = {
   name: string;
   description: string;
   status: "connected" | "connecting" | "disabled" | "coming-soon";
-  icon: typeof MessageCircle;
+  icon: typeof ChatCircle;
   color: string;
   iconBg: string;
   phone?: string;
@@ -35,7 +35,7 @@ function IntegrationsPage() {
       name: "Telegram",
       description: "Connect your Telegram account",
       status: "disabled",
-      icon: MessageCircle,
+      icon: ChatCircle,
       color: "text-[#0088cc]",
       iconBg: "bg-[#0088cc]/15 border-[#0088cc]/30 group-hover:bg-[#0088cc]/25",
     },
@@ -44,7 +44,7 @@ function IntegrationsPage() {
       name: "Instagram",
       description: "Direct messages & comments",
       status: "coming-soon",
-      icon: Image,
+      icon: ImageSquare,
       color: "text-purple-400",
       iconBg: "bg-gradient-to-br from-purple-500/15 to-pink-500/15 border-purple-500/20",
     },
@@ -53,7 +53,7 @@ function IntegrationsPage() {
       name: "WhatsApp Business",
       description: "Business messaging platform",
       status: "coming-soon",
-      icon: MessageSquare,
+      icon: ChatText,
       color: "text-[#25D366]",
       iconBg: "bg-[#25D366]/15 border-[#25D366]/20",
     },
@@ -158,7 +158,7 @@ function IntegrationCard({
               {int.name}
               {isConnecting && (
                 <span className="flex items-center gap-1 text-[10px] text-primary">
-                  <Loader2 size={10} className="animate-spin" />
+                  <Spinner size={10} className="animate-spin" weight="bold" />
                   Connecting...
                 </span>
               )}

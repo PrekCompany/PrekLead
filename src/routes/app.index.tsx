@@ -1,6 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { AICore } from "@/components/app/AICore";
-import { Activity, MessageSquare, TrendingUp, Zap, ArrowUp, Sparkles } from "lucide-react";
+import { Activity, ChatText, TrendUp, Lightning, ArrowUp, Sparkle } from "phosphor-react";
 import { useEffect, useState } from "react";
 
 export const Route = createFileRoute("/app/")({
@@ -12,7 +12,7 @@ function AppHome() {
     <div className="p-6 md:p-10">
       <div className="mb-8 animate-fade-up">
         <div className="text-xs uppercase tracking-widest text-primary mb-1 flex items-center gap-2">
-          <Sparkles size={12} className="text-primary" />
+          <Sparkle size={12} className="text-primary" />
           AI Control Center
         </div>
         <h1 className="font-display text-3xl font-semibold text-gradient">С возвращением, Алексей</h1>
@@ -32,9 +32,9 @@ function AppHome() {
         </div>
 
         <div className="space-y-3">
-          <AnimatedStat icon={MessageSquare} label="Сообщений сегодня" value={247} suffix="" trend="+18%" tone="primary" />
-          <AnimatedStat icon={Zap} label="Лиды" value={18} suffix="" trend="+22%" tone="success" />
-          <AnimatedStat icon={TrendingUp} label="Конверсия" value={34} suffix="%" trend="+4%" tone="primary" />
+          <AnimatedStat icon={ChatText} label="Сообщений сегодня" value={247} suffix="" trend="+18%" tone="primary" />
+          <AnimatedStat icon={Lightning} label="Лиды" value={18} suffix="" trend="+22%" tone="success" />
+          <AnimatedStat icon={TrendUp} label="Конверсия" value={34} suffix="%" trend="+4%" tone="primary" />
           <AnimatedStat icon={Activity} label="Аптайм AI" value={99.98} suffix="%" tone="success" />
 
           <div className="glass rounded-2xl p-4 mt-4 group hover:border-primary/30 transition-all duration-300">

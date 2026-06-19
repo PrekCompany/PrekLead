@@ -1,7 +1,7 @@
 import { Link } from "@tanstack/react-router";
 import { Logo } from "../Brand";
 import { useEffect, useState } from "react";
-import { Menu, X } from "lucide-react";
+import { Menu, X } from "../PhosphorIcons";
 
 export function Nav() {
   const [scrolled, setScrolled] = useState(false);
@@ -9,7 +9,7 @@ export function Nav() {
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 20);
     onScroll();
-    window.addEventListener("scroll", onScroll);
+    window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
@@ -22,17 +22,17 @@ export function Nav() {
 
   return (
     <header
-      className={`fixed top-0 inset-x-0 z-50 transition-all duration-300 ${
+      className={`fixed top-0 inset-x-0 z-50 transition-all duration-500 ${
         scrolled ? "py-2" : "py-4"
       }`}
     >
       <div className="mx-auto max-w-6xl px-4">
         <div
-          className={`flex items-center justify-between rounded-2xl px-4 py-3 transition-all ${
-            scrolled ? "glass-strong" : "glass"
+          className={`flex items-center justify-between rounded-2xl px-4 py-3 transition-all duration-500 ${
+            scrolled ? "glass-strong shadow-lg shadow-black/20" : "glass"
           }`}
         >
-          <Link to="/">
+          <Link to="/" className="relative z-10">
             <Logo />
           </Link>
 
@@ -73,7 +73,7 @@ export function Nav() {
         </div>
 
         {open && (
-          <div className="md:hidden mt-2 glass-strong rounded-2xl p-4 animate-fade-up">
+          <div className="md:hidden mt-2 glass-strong rounded-2xl p-4 animate-fade-up border border-border/30">
             <div className="flex flex-col gap-1">
               {links.map((l) => (
                 <Link
@@ -85,7 +85,7 @@ export function Nav() {
                   {l.label}
                 </Link>
               ))}
-              <div className="h-px bg-border my-2" />
+              <div className="h-px bg-border/50 my-2" />
               <Link
                 to="/auth"
                 onClick={() => setOpen(false)}

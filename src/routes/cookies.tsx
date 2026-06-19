@@ -1,6 +1,9 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useState, useEffect } from "react";
-import { Check, X, Settings2 } from "lucide-react";
+import { Gear } from "phosphor-react";
+import { Nav } from "@/components/landing/Nav";
+import { Footer } from "@/components/landing/Footer";
+import { BackLink } from "@/components/BackLink";
 
 export const Route = createFileRoute("/cookies")({
   head: () => ({ meta: [{ title: "Cookie Policy — PREKLEAD" }] }),
@@ -9,11 +12,15 @@ export const Route = createFileRoute("/cookies")({
 
 function CookiePolicyPage() {
   return (
-    <div className="max-w-3xl mx-auto py-16 space-y-8 animate-fade-up">
-      <div>
-        <h1 className="text-3xl font-bold font-display">Cookie Policy</h1>
-        <p className="text-muted-foreground text-sm mt-2">Last updated: June 2025</p>
-      </div>
+    <div className="min-h-screen">
+      <Nav />
+      <section className="pt-32 pb-20">
+        <div className="max-w-3xl mx-auto space-y-8 animate-fade-up px-4">
+          <div>
+            <div className="mb-6"><BackLink to="/" /></div>
+            <h1 className="text-3xl font-bold font-display">Cookie Policy</h1>
+            <p className="text-muted-foreground text-sm mt-2">Last updated: June 2025</p>
+          </div>
 
       <section className="glass-strong rounded-2xl p-6 space-y-4">
         <h2 className="text-lg font-semibold">1. What Are Cookies</h2>
@@ -63,6 +70,9 @@ function CookiePolicyPage() {
           such changes constitutes acceptance of the updated Cookie Policy.
         </p>
       </section>
+        </div>
+      </section>
+      <Footer />
     </div>
   );
 }
@@ -105,7 +115,7 @@ export function CookieConsent() {
           <>
             <div className="flex items-start gap-4">
               <div className="size-10 rounded-xl bg-primary/15 border border-primary/30 grid place-items-center shrink-0">
-                <Settings2 size={18} className="text-primary" />
+                <Gear size={18} className="text-primary" />
               </div>
               <div className="flex-1">
                 <h3 className="text-sm font-semibold">Cookie Preferences</h3>

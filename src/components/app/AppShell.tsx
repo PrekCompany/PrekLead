@@ -2,26 +2,26 @@ import { Link, Outlet, useLocation } from "@tanstack/react-router";
 import { Logo } from "../Brand";
 import {
   Brain,
-  Inbox,
+  Tray,
   Target,
   Users,
-  BarChart3,
+  ChartBar,
   Plug,
   Bell,
-  Search,
-  LogOut,
-  ChevronRight,
-  Sparkles,
-  Settings2,
-} from "lucide-react";
+  MagnifyingGlass,
+  SignOut,
+  CaretRight,
+  Sparkle,
+  Gear,
+} from "phosphor-react";
 import { useState } from "react";
 
 const ITEMS = [
   { to: "/app", icon: Brain, label: "AI Core", exact: true },
-  { to: "/app/inbox", icon: Inbox, label: "Inbox", badge: 3 },
+  { to: "/app/inbox", icon: Tray, label: "Inbox", badge: 3 },
   { to: "/app/leads", icon: Target, label: "Leads" },
   { to: "/app/crm", icon: Users, label: "CRM" },
-  { to: "/app/analytics", icon: BarChart3, label: "Analytics" },
+  { to: "/app/analytics", icon: ChartBar, label: "Analytics" },
   { to: "/app/integrations", icon: Plug, label: "Integrations" },
 ];
 
@@ -37,7 +37,7 @@ export function AppShell() {
           <Link to="/app" className="group flex items-center gap-3">
             <Logo />
             <div className="flex items-center gap-1.5">
-              <Sparkles size={12} className="text-primary animate-pulse" />
+              <Sparkle size={12} className="text-primary animate-pulse" />
               <span className="text-[9px] text-primary/80 font-medium tracking-wider uppercase">AI Active</span>
             </div>
           </Link>
@@ -73,7 +73,7 @@ export function AppShell() {
                   </span>
                 )}
                 {active && (
-                  <ChevronRight size={12} className="text-primary/60" />
+                  <CaretRight size={12} className="text-primary/60" />
                 )}
               </Link>
             );
@@ -92,7 +92,7 @@ export function AppShell() {
               <div className="flex-1 min-w-0">
                 <div className="text-xs font-semibold truncate">Алексей Петров</div>
                 <div className="text-[10px] text-primary/80 font-medium flex items-center gap-1">
-                  <Sparkles size={10} className="text-primary" />
+                  <Sparkle size={10} className="text-primary" />
                   Pro Plan
                 </div>
               </div>
@@ -103,14 +103,14 @@ export function AppShell() {
                 to="/"
                 className="flex-1 flex items-center justify-center gap-1.5 py-1.5 rounded-lg text-[10px] text-muted-foreground hover:text-destructive hover:bg-destructive/10 transition-all"
               >
-                <LogOut size={12} />
+                <SignOut size={12} />
                 Log Out
               </Link>
               <Link
                 to="/app"
                 className="flex items-center justify-center size-7 rounded-lg text-[10px] text-muted-foreground hover:text-foreground hover:bg-white/5 transition-all"
               >
-                <Settings2 size={12} />
+                <Gear size={12} />
               </Link>
             </div>
           </div>
@@ -126,7 +126,7 @@ export function AppShell() {
             </div>
             <div className="flex-1 max-w-md">
               <div className="relative group">
-                <Search size={14} className={`absolute left-3 top-1/2 -translate-y-1/2 transition-colors duration-200 ${
+                <MagnifyingGlass size={14} className={`absolute left-3 top-1/2 -translate-y-1/2 transition-colors duration-200 ${
                   searchFocused ? "text-primary" : "text-muted-foreground"
                 }`} />
                 <input

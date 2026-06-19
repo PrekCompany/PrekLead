@@ -1,24 +1,24 @@
 import { Link } from "@tanstack/react-router";
 import {
   Brain,
-  Inbox,
+  Tray,
   Target,
   Users,
-  BarChart3,
+  ChartBar,
   Plug,
-  Sparkles,
+  Sparkle,
   Activity,
-  Zap,
+  Lightning,
   Shield,
-  Orbit,
-} from "lucide-react";
+  Planet,
+} from "phosphor-react";
 import { useEffect, useState } from "react";
 
 const NODES = [
-  { id: "inbox", label: "Inbox", to: "/app/inbox", icon: Inbox, angle: 0, color: "from-blue-500/20 to-blue-600/10" },
+  { id: "inbox", label: "Inbox", to: "/app/inbox", icon: Tray, angle: 0, color: "from-blue-500/20 to-blue-600/10" },
   { id: "leads", label: "Leads", to: "/app/leads", icon: Target, angle: 60, color: "from-amber-500/20 to-amber-600/10" },
   { id: "crm", label: "CRM", to: "/app/crm", icon: Users, angle: 120, color: "from-emerald-500/20 to-emerald-600/10" },
-  { id: "analytics", label: "Analytics", to: "/app/analytics", icon: BarChart3, angle: 180, color: "from-violet-500/20 to-violet-600/10" },
+  { id: "analytics", label: "Analytics", to: "/app/analytics", icon: ChartBar, angle: 180, color: "from-violet-500/20 to-violet-600/10" },
   { id: "integrations", label: "Integrations", to: "/app/integrations", icon: Plug, angle: 240, color: "from-rose-500/20 to-rose-600/10" },
   { id: "settings", label: "Settings", to: "/app", icon: Brain, angle: 300, color: "from-primary/20 to-primary/10" },
 ];
@@ -178,7 +178,7 @@ export function AICore() {
       <div className="absolute -top-2 left-1/2 -translate-x-1/2 animate-float">
         <div className="glass rounded-xl px-5 py-2.5 flex items-center gap-4 shadow-lg shadow-primary/5">
           <div className="flex items-center gap-1.5 text-[10px] text-muted-foreground">
-            <Zap size={11} className="text-warning" />
+            <Lightning size={11} className="text-warning" />
             <span className="text-foreground font-semibold">284</span> ms
           </div>
           <div className="w-px h-3 bg-gradient-to-b from-transparent via-border/50 to-transparent" />

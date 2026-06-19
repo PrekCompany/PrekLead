@@ -1,7 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { messages } from "@/lib/mock-data";
 import { useState } from "react";
-import { Send, Sparkles } from "lucide-react";
+import { PaperPlaneRight, Sparkle } from "phosphor-react";
 
 export const Route = createFileRoute("/app/inbox")({
   head: () => ({ meta: [{ title: "Inbox — PREKLEAD" }] }),
@@ -69,10 +69,10 @@ function InboxPage() {
             className="flex-1 px-3 py-2 text-sm bg-input/40 border border-border rounded-lg focus:outline-none focus:ring-1 focus:ring-primary/50"
           />
           <button className="px-3 rounded-lg glass-strong hover:bg-white/5 flex items-center gap-1.5 text-sm">
-            <Sparkles size={14} className="text-primary" /> AI
+            <Sparkle size={14} className="text-primary" /> AI
           </button>
           <button className="size-9 rounded-lg bg-primary grid place-items-center">
-            <Send size={14} className="text-primary-foreground" />
+            <PaperPlaneRight size={14} className="text-primary-foreground" />
           </button>
         </div>
       </div>
@@ -88,7 +88,7 @@ function InboxPage() {
         </div>
         <div className="glass rounded-xl p-4">
           <div className="flex items-center gap-2 mb-2">
-            <Sparkles size={14} className="text-primary" />
+            <Sparkle size={14} className="text-primary" />
             <span className="text-xs font-semibold">Suggested reply</span>
           </div>
           <p className="text-sm leading-relaxed">{active.suggested}</p>

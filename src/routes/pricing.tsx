@@ -8,7 +8,7 @@ export const Route = createFileRoute("/pricing")({
   head: () => ({
     meta: [
       { title: "Тарифы — PREKLEAD" },
-      { name: "description", content: "Прозрачные тарифы PREKLEAD: Starter, Medium, High. Отмена в один клик." },
+      { name: "description", content: "Прозрачные тарифы PREKLEAD: Starter, Pro, Business. Отмена в один клик." },
     ],
   }),
   component: () => (

@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { Cookie } from "lucide-react";
+import { Cookie } from "../PhosphorIcons";
 
 export function CookieBanner() {
   const [show, setShow] = useState(false);
