@@ -248,6 +248,44 @@ export function BrandLogo({ size = 20 }: { size?: number }) {
   );
 }
 
+export function SignalFlowIcon(props: IconProps) {
+  const s = props.size ?? 24;
+  return (
+    <svg width={s} height={s} viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" className={props.className}>
+      <path d="M4 7.5h5.4c2.4 0 3.6 1.2 3.6 3.6v1.8c0 2.4 1.2 3.6 3.6 3.6H20" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" />
+      <path d="M4 16.5h4.2c1.7 0 2.7-.8 3.5-2.2l1.4-2.6c.8-1.4 1.8-2.2 3.5-2.2H20" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" opacity="0.45" />
+      <circle cx="4" cy="7.5" r="2" fill="currentColor" opacity="0.9" />
+      <circle cx="20" cy="9.5" r="2" fill="currentColor" opacity="0.55" />
+      <circle cx="20" cy="16.5" r="2" fill="currentColor" opacity="0.9" />
+    </svg>
+  );
+}
+
+export function RevenueSparkIcon(props: IconProps) {
+  const s = props.size ?? 24;
+  return (
+    <svg width={s} height={s} viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" className={props.className}>
+      <path d="M4 17.5 9.4 12l3.8 3.5L20 7" stroke="currentColor" strokeWidth="1.9" strokeLinecap="round" strokeLinejoin="round" />
+      <path d="M17.5 7H20v2.5" stroke="currentColor" strokeWidth="1.9" strokeLinecap="round" strokeLinejoin="round" />
+      <path d="M7.2 5.4 8 3l.8 2.4L11 6.2 8.8 7 8 9.4 7.2 7 5 6.2l2.2-.8Z" fill="currentColor" opacity="0.9" />
+      <path d="m15.4 18.4.6-1.7.6 1.7 1.7.6-1.7.6-.6 1.7-.6-1.7-1.7-.6 1.7-.6Z" fill="currentColor" opacity="0.55" />
+    </svg>
+  );
+}
+
+export function TrustGridIcon(props: IconProps) {
+  const s = props.size ?? 24;
+  return (
+    <svg width={s} height={s} viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" className={props.className}>
+      <rect x="4" y="4" width="6" height="6" rx="2" stroke="currentColor" strokeWidth="1.7" />
+      <rect x="14" y="4" width="6" height="6" rx="2" stroke="currentColor" strokeWidth="1.7" opacity="0.55" />
+      <rect x="4" y="14" width="6" height="6" rx="2" stroke="currentColor" strokeWidth="1.7" opacity="0.55" />
+      <rect x="14" y="14" width="6" height="6" rx="2" fill="currentColor" opacity="0.9" />
+      <path d="M7 10v2m0 0v2m0-2h10m0-2v2m0 0v2" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round" opacity="0.35" />
+    </svg>
+  );
+}
+
 // UTILITY EXPORTS
 export const Sparkles = NavSparkles;
 export const AlertTriangle = NavAlertTriangle;
