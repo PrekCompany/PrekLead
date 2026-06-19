@@ -116,21 +116,7 @@ export function Hero() {
               ))}
             </div>
 
-            {/* Trust badges row */}
-            <div className="mt-5 flex flex-wrap items-center gap-4">
-              <span className="flex items-center gap-1.5 text-[11px] text-muted-foreground/50 px-3 py-1.5 glass rounded-full border border-border/20">
-                <Shield size={12} className="text-success" />
-                Без кредитной карты
-              </span>
-              <span className="flex items-center gap-1.5 text-[11px] text-muted-foreground/50 px-3 py-1.5 glass rounded-full border border-border/20">
-                <ChatCircle size={12} className="text-primary" />
-                3 канала за 5 минут
-              </span>
-              <span className="flex items-center gap-1.5 text-[11px] text-muted-foreground/50 px-3 py-1.5 glass rounded-full border border-border/20">
-                <Sparkles size={12} className="text-primary" />
-                GPT-4o & Claude
-              </span>
-            </div>
+
           </div>
 
           {/* Right — Demo chat mockup */}
