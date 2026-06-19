@@ -90,15 +90,19 @@ export function Solution() {
       </div>
 
       <div className="mx-auto max-w-6xl px-4">
-        <div className={`max-w-2xl mb-8 md:mb-12 transition-all duration-700 ${inView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'}`}>
+        {/* Centered heading */}
+        <div className={`text-center max-w-2xl mx-auto mb-12 md:mb-16 transition-all duration-700 ${inView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'}`}>
           <div className="text-xs font-semibold uppercase tracking-widest text-primary mb-3">Решение</div>
           <h2 className="font-display text-3xl md:text-5xl font-semibold text-gradient leading-tight">
             PREKLEAD — <span className="text-gradient-primary">AI, который продаёт</span> за вас
           </h2>
+          <p className="mt-4 text-muted-foreground">
+            Одна система вместо 5 инструментов. AI обрабатывает все каналы и доводит сделки до оплаты.
+          </p>
         </div>
 
-        {/* Desktop: 5-column layout with hub */}
-        <div className="hidden md:grid md:grid-cols-5 gap-5 items-center">
+        {/* Desktop: 2x2 grid with center hub */}
+        <div className="hidden md:grid md:grid-cols-3 gap-5 items-center">
           {/* Left column — 2 items */}
           <div className="space-y-5">
             {items.slice(0, 2).map((i, idx) => (
