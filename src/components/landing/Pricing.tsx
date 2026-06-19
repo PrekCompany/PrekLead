@@ -1,4 +1,3 @@
-import { useState } from "react";
 import { Link } from "@tanstack/react-router";
 import { Check, Sparkles } from "../PhosphorIcons";
 import { useScrollReveal } from "@/lib/useScrollReveal";
@@ -7,8 +6,7 @@ const PLANS = [
   {
     name: "Starter",
     tag: "Для малого бизнеса",
-    monthly: 15,
-    yearly: 150,
+    price: 15,
     features: [
       "До 500 AI-ответов в месяц",
       "Подключение Telegram",
@@ -24,8 +22,7 @@ const PLANS = [
   {
     name: "Pro",
     tag: "Для растущего бизнеса",
-    monthly: 39,
-    yearly: 390,
+    price: 39,
     recommended: true,
     features: [
       "До 10 000 AI-ответов в месяц",
@@ -46,8 +43,7 @@ const PLANS = [
   {
     name: "Business",
     tag: "Для компаний",
-    monthly: 89,
-    yearly: 890,
+    price: 89,
     features: [
       "До 40 000 AI-ответов в месяц",
       "Все интеграции — Telegram, Instagram, WhatsApp",
@@ -67,7 +63,6 @@ const PLANS = [
 ];
 
 export function Pricing({ standalone = false }: { standalone?: boolean }) {
-  const [year, setYear] = useState(true);
   const { ref, inView } = useScrollReveal(0.05);
 
   return (
@@ -84,25 +79,6 @@ export function Pricing({ standalone = false }: { standalone?: boolean }) {
             PREKLEAD Pricing
           </h2>
           <p className="mt-4 text-muted-foreground">Без скрытых платежей. Отмена в один клик.</p>
-
-          <div className="mt-8 inline-flex items-center gap-1 p-1 rounded-full glass border border-border/20">
-            <button
-              onClick={() => setYear(false)}
-              className={`px-4 py-1.5 text-sm rounded-full transition-all ${
-                !year ? "bg-primary text-primary-foreground shadow-lg shadow-primary/30" : "text-muted-foreground hover:text-foreground"
-              }`}
-            >
-              Месяц
-            </button>
-            <button
-              onClick={() => setYear(true)}
-              className={`px-4 py-1.5 text-sm rounded-full transition-all ${
-                year ? "bg-primary text-primary-foreground shadow-lg shadow-primary/30" : "text-muted-foreground hover:text-foreground"
-              }`}
-            >
-              Год <span className="text-[10px] opacity-80 ml-1">−17%</span>
-            </button>
-          </div>
         </div>
 
         <div className="grid md:grid-cols-3 gap-5">
@@ -124,8 +100,8 @@ export function Pricing({ standalone = false }: { standalone?: boolean }) {
               <div className="text-xs text-muted-foreground uppercase tracking-wider">{p.tag}</div>
               <h3 className="font-display text-2xl font-semibold mt-1">{p.name}</h3>
               <div className="mt-4 flex items-baseline gap-1">
-                <span className="font-display text-5xl font-semibold">${year ? p.yearly : p.monthly}</span>
-                <span className="text-sm text-muted-foreground">/ {year ? "год" : "мес"}</span>
+                <span className="font-display text-5xl font-semibold">${p.price}</span>
+                <span className="text-sm text-muted-foreground">/ мес</span>
               </div>
 
               {/* Feature list */}
