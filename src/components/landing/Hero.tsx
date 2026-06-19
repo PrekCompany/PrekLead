@@ -6,7 +6,6 @@ const stats = [
   { label: "Сообщений обработано", value: "24/7" },
   { label: "Языков поддержки", value: "50+" },
   { label: "Среднее время ответа", value: "< 2с" },
-  { label: "Рост конверсии", value: "340%" },
 ];
 
 const proof = [
@@ -140,11 +139,7 @@ export function Hero() {
             <div className="absolute -inset-20 bg-gradient-to-r from-primary/10 via-primary/5 to-accent/10 blur-[100px] rounded-3xl" />
 
             <div className="relative premium-card rounded-3xl p-1 shadow-2xl shadow-black/40 group hover:border-primary/40 transition-all duration-500">
-              <div className="absolute -top-8 -right-7 z-20 hidden xl:block premium-card rounded-2xl p-4 w-44 rotate-3 animate-float">
-                <RevenueSparkIcon size={24} className="text-success" />
-                <div className="mt-2 font-display text-2xl font-bold text-gradient-primary">+41%</div>
-                <div className="text-[11px] text-muted-foreground/70">квалифицированных заявок за 14 дней</div>
-              </div>
+
               <div className="absolute -bottom-7 -left-6 z-20 hidden xl:flex items-center gap-3 premium-card rounded-2xl p-3 w-48 -rotate-2" style={{ animation: "float 5s ease-in-out infinite", animationDelay: "-2s" }}>
                 <SignalFlowIcon size={24} className="text-primary" />
                 <div>

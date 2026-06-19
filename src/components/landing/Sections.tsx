@@ -1,4 +1,4 @@
-import { AlertTriangle, Clock, TrendingDown, MessageSquareOff, Sparkles, Zap, Target, BarChart3, Send, Brain, Inbox, Users, LineChart, Plug, Shield, CheckCircle, Rocket, Database, Activity, Star, Globe, ChatCircle, SignalFlowIcon, RevenueSparkIcon, TrustGridIcon } from "../PhosphorIcons";
+import { AlertTriangle, Clock, TrendingDown, MessageSquareOff, Sparkles, Zap, Target, BarChart3, Send, Brain, Inbox, Users, LineChart, Plug, Shield, CheckCircle, Database, Activity, Star, Globe, SignalFlowIcon, RevenueSparkIcon, TrustGridIcon } from "../PhosphorIcons";
 import { useScrollReveal } from "@/lib/useScrollReveal";
 
 /* ════════════════════════════════════════
@@ -299,17 +299,14 @@ export function HowItWorks() {
 export function StatsBar() {
   const { ref, inView } = useScrollReveal(0.05);
   const metrics = [
-    { icon: ChatCircle, value: "10M+", label: "Сообщений обработано" },
     { icon: Globe, value: "50+", label: "Языков поддержки" },
-    { icon: Zap, value: "99.9%", label: "Аптайм системы" },
-    { icon: Rocket, value: "340%", label: "Рост конверсии" },
   ];
 
   return (
     <section className="relative py-16 md:py-20 overflow-hidden" ref={ref}>
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_60%_40%_at_50%_50%,oklch(0.62_0.24_258/0.08),transparent_70%)]" />
       <div className="mx-auto max-w-6xl px-4">
-        <div className={`grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-5 transition-all duration-700 ${inView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
+        <div className={`flex justify-center gap-3 md:gap-5 transition-all duration-700 ${inView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
           {metrics.map((m, idx) => (
             <div
               key={idx}
