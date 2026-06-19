@@ -1,4 +1,4 @@
-import { AlertTriangle, Clock, TrendingDown, MessageSquareOff, Sparkles, Zap, Target, BarChart3, Send, Brain, Inbox, Users, LineChart, Plug, Shield, CheckCircle, Rocket, Database, Activity, Star, Globe, ChatCircle } from "../PhosphorIcons";
+import { AlertTriangle, Clock, TrendingDown, MessageSquareOff, Sparkles, Zap, Target, BarChart3, Send, Brain, Inbox, Users, LineChart, Plug, Shield, CheckCircle, Rocket, Database, Activity, Star, Globe, ChatCircle, SignalFlowIcon, RevenueSparkIcon, TrustGridIcon } from "../PhosphorIcons";
 import { useScrollReveal } from "@/lib/useScrollReveal";
 
 /* ════════════════════════════════════════
@@ -321,6 +321,55 @@ export function StatsBar() {
               <m.icon size={22} className="text-primary mx-auto mb-2 md:mb-3" />
               <div className="font-display text-2xl md:text-3xl font-bold text-gradient-primary">{m.value}</div>
               <div className="text-[10px] md:text-xs text-muted-foreground/60 mt-1">{m.label}</div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
+export function RevenueRoom() {
+  const { ref, inView } = useScrollReveal(0.08);
+  const cards = [
+    { icon: SignalFlowIcon, title: "AI Inbox", text: "Все сообщения собираются в один поток, AI видит контекст клиента и не теряет историю." },
+    { icon: RevenueSparkIcon, title: "Deal Engine", text: "Система сама определяет горячие лиды, предлагает follow-up и подсвечивает сделки." },
+    { icon: TrustGridIcon, title: "Client Memory", text: "Карточки клиентов, теги, источники и заметки AI — всё готово для менеджера." },
+  ];
+
+  return (
+    <section className="relative overflow-hidden py-16 md:py-24" ref={ref}>
+      <div className="absolute inset-0 bg-[radial-gradient(ellipse_70%_45%_at_50%_50%,oklch(0.62_0.24_258/0.09),transparent_70%)]" />
+      <div className="absolute inset-0 diagonal-grid opacity-[0.07]" />
+      <div className="relative mx-auto max-w-6xl px-4">
+        <div className={`mb-8 md:mb-12 grid gap-6 md:grid-cols-[0.9fr_1.1fr] md:items-end transition-all duration-700 ${inView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"}`}>
+          <div>
+            <div className="text-xs font-semibold uppercase tracking-widest text-primary mb-3">Revenue Room</div>
+            <h2 className="font-display text-3xl md:text-5xl font-bold aurora-text leading-tight">
+              Не просто чат-бот — полноценная комната продаж
+            </h2>
+          </div>
+          <p className="text-sm md:text-base text-muted-foreground/75 leading-relaxed">
+            Мы сделали лендинг визуально честнее: PREKLEAD продаёт не “ответы”, а управляемую систему, где канал, клиент, AI и CRM работают как один механизм.
+          </p>
+        </div>
+
+        <div className="grid gap-4 md:grid-cols-3">
+          {cards.map((card, idx) => (
+            <div
+              key={card.title}
+              className={`premium-card group rounded-[1.75rem] p-5 md:p-6 transition-all duration-500 hover:-translate-y-2 hover:border-primary/40 ${inView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"}`}
+              style={{ transitionDelay: `${idx * 120}ms` }}
+            >
+              <div className="mb-5 flex items-center justify-between">
+                <div className="grid size-12 place-items-center rounded-2xl bg-primary/12 text-primary ring-1 ring-primary/20 group-hover:text-primary-glow group-hover:scale-110 transition-all">
+                  <card.icon size={26} />
+                </div>
+                <div className="h-px flex-1 mx-4 bg-gradient-to-r from-primary/40 to-transparent" />
+                <span className="font-display text-xs text-muted-foreground/40">0{idx + 1}</span>
+              </div>
+              <h3 className="font-display text-xl font-semibold text-foreground">{card.title}</h3>
+              <p className="mt-3 text-sm leading-relaxed text-muted-foreground/72">{card.text}</p>
             </div>
           ))}
         </div>

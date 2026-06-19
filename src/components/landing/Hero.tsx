@@ -1,12 +1,18 @@
 import { Link } from "@tanstack/react-router";
 import { useEffect, useState } from "react";
-import { ArrowRight, Sparkles, ChatCircle, Shield } from "../PhosphorIcons";
+import { ArrowRight, Sparkles, ChatCircle, Shield, SignalFlowIcon, RevenueSparkIcon, TrustGridIcon } from "../PhosphorIcons";
 
 const stats = [
   { label: "Сообщений обработано", value: "24/7" },
   { label: "Языков поддержки", value: "50+" },
   { label: "Среднее время ответа", value: "< 2с" },
   { label: "Рост конверсии", value: "340%" },
+];
+
+const proof = [
+  { icon: SignalFlowIcon, label: "3 канала", value: "Telegram · Instagram · WhatsApp" },
+  { icon: RevenueSparkIcon, label: "AI-продажи", value: "квалификация + follow-up" },
+  { icon: TrustGridIcon, label: "CRM-ready", value: "лиды, теги, история" },
 ];
 
 export function Hero() {
@@ -28,6 +34,7 @@ export function Hero() {
 
       {/* Grid pattern overlay */}
       <div className="absolute inset-0 grid-pattern opacity-20 [mask-image:radial-gradient(ellipse_at_center,black_40%,transparent_80%)]" />
+      <div className="absolute inset-0 diagonal-grid opacity-[0.08] [mask-image:linear-gradient(to_bottom,black,transparent_85%)]" />
 
       {/* Floating orbs */}
       <div className="absolute top-1/4 left-[15%] size-72 rounded-full bg-primary/8 blur-[120px] animate-float" />
@@ -54,7 +61,7 @@ export function Hero() {
             </div>
 
             {/* Headline */}
-            <h1 className="font-display text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-semibold leading-[1.05] text-gradient">
+             <h1 className="font-display text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-semibold leading-[1.05] aurora-text">
               Превращайте каждое сообщение
               <br />
               <span className="text-gradient-primary">в клиента</span>
@@ -64,6 +71,16 @@ export function Hero() {
               AI автоматически отвечает клиентам в Telegram, Instagram и WhatsApp —
               квалифицирует лиды, ведёт CRM и увеличивает продажи 24/7.
             </p>
+
+            <div className="mt-7 grid gap-2.5 sm:grid-cols-3">
+              {proof.map((item) => (
+                <div key={item.label} className="premium-card rounded-2xl p-3.5 group hover:-translate-y-1 transition-all duration-300">
+                  <item.icon size={22} className="text-primary group-hover:text-primary-glow transition-colors" />
+                  <div className="mt-2 text-xs font-semibold text-foreground">{item.label}</div>
+                  <div className="mt-0.5 text-[10px] leading-snug text-muted-foreground/65">{item.value}</div>
+                </div>
+              ))}
+            </div>
 
             {/* CTA */}
             <div className="mt-8 flex flex-wrap gap-3">
@@ -90,7 +107,7 @@ export function Hero() {
               {stats.map((s, idx) => (
                 <div
                   key={idx}
-                  className={`glass rounded-xl px-4 py-3 border border-primary/5 transition-all duration-500 ${
+                  className={`premium-card rounded-xl px-4 py-3 transition-all duration-500 ${
                     idx === activeStat ? "border-primary/30 glow-primary scale-105" : "opacity-70 hover:opacity-100"
                   }`}
                 >
@@ -122,7 +139,19 @@ export function Hero() {
             {/* Glow behind mockup */}
             <div className="absolute -inset-20 bg-gradient-to-r from-primary/10 via-primary/5 to-accent/10 blur-[100px] rounded-3xl" />
 
-            <div className="relative glass-strong rounded-3xl p-1 shadow-2xl shadow-black/40 border border-white/[0.06] group hover:border-primary/30 transition-all duration-500">
+            <div className="relative premium-card rounded-3xl p-1 shadow-2xl shadow-black/40 group hover:border-primary/40 transition-all duration-500">
+              <div className="absolute -top-8 -right-7 z-20 hidden xl:block premium-card rounded-2xl p-4 w-44 rotate-3 animate-float">
+                <RevenueSparkIcon size={24} className="text-success" />
+                <div className="mt-2 font-display text-2xl font-bold text-gradient-primary">+41%</div>
+                <div className="text-[11px] text-muted-foreground/70">квалифицированных заявок за 14 дней</div>
+              </div>
+              <div className="absolute -bottom-7 -left-6 z-20 hidden xl:flex items-center gap-3 premium-card rounded-2xl p-3 w-48 -rotate-2" style={{ animation: "float 5s ease-in-out infinite", animationDelay: "-2s" }}>
+                <SignalFlowIcon size={24} className="text-primary" />
+                <div>
+                  <div className="text-xs font-semibold">Smart routing</div>
+                  <div className="text-[10px] text-muted-foreground/70">лид сразу в CRM</div>
+                </div>
+              </div>
               <div className="rounded-2xl overflow-hidden bg-gradient-to-b from-surface-elevated/80 to-surface/60 backdrop-blur-sm">
                 {/* Header */}
                 <div className="flex items-center gap-3 px-5 py-3 border-b border-border/20">
