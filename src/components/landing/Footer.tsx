@@ -1,6 +1,6 @@
 import { Logo } from "../Brand";
 import { SOCIAL_LINKS } from "../SocialIcons";
-import { ArrowRight, CheckCircle, RevenueSparkIcon, Shield, SignalFlowIcon } from "../PhosphorIcons";
+import { ArrowRight } from "../PhosphorIcons";
 
 interface FooterLink {
   label: string;
@@ -60,12 +60,10 @@ export function Footer() {
       <div className="absolute left-1/2 top-0 size-[520px] -translate-x-1/2 rounded-full bg-primary/8 blur-[140px]" />
 
       <div className="relative mx-auto max-w-6xl px-4 py-12 md:py-16">
+        {/* CTA Banner */}
         <div className="premium-card mb-10 overflow-hidden rounded-[2rem] p-5 md:p-7">
           <div className="grid gap-6 md:grid-cols-[1.3fr_0.7fr] md:items-center">
             <div>
-              <div className="mb-3 inline-flex items-center gap-2 rounded-full border border-success/20 bg-success/10 px-3 py-1.5 text-xs text-success">
-                <CheckCircle size={14} /> Production-ready AI sales stack
-              </div>
               <h3 className="font-display text-2xl md:text-4xl font-bold aurora-text">
                 Хотите, чтобы AI отвечал клиентам уже сегодня?
               </h3>
@@ -74,16 +72,17 @@ export function Footer() {
               </p>
             </div>
             <div className="flex flex-col gap-3 sm:flex-row md:flex-col md:items-stretch">
-              <a href="/register" target="_blank" rel="noopener noreferrer" className="group inline-flex items-center justify-center gap-2 rounded-2xl bg-primary px-5 py-3 text-sm font-semibold text-primary-foreground transition-all hover:bg-primary-glow hover:glow-primary">
+              <a href="/register" target="_blank" rel="noopener noreferrer" className="group inline-flex items-center justify-center gap-2 rounded-2xl bg-primary px-5 py-3 text-sm font-semibold text-primary-foreground transition-all hover:bg-primary-glow hover:glow-primary hover:scale-[1.02] active:scale-[0.98]">
                 Начать бесплатно <ArrowRight size={15} className="transition-transform group-hover:translate-x-1" />
               </a>
-              <a href="https://t.me/preklead_support" target="_blank" rel="noopener noreferrer" className="inline-flex items-center justify-center gap-2 rounded-2xl border border-border/40 bg-white/[0.04] px-5 py-3 text-sm font-medium text-foreground transition-all hover:border-primary/35 hover:bg-primary/10">
+              <a href="https://t.me/preklead_support" target="_blank" rel="noopener noreferrer" className="inline-flex items-center justify-center gap-2 rounded-2xl border border-border/40 bg-white/[0.04] px-5 py-3 text-sm font-medium text-foreground transition-all hover:border-primary/35 hover:bg-primary/10 hover:scale-[1.02] active:scale-[0.98]">
                 Написать в Telegram
               </a>
             </div>
           </div>
         </div>
 
+        {/* Footer Links */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-10">
           {/* Brand column */}
           <div className="flex flex-col gap-4">
@@ -94,16 +93,6 @@ export function Footer() {
               AI Business OS для роста продаж. Объединяем Telegram, Instagram и WhatsApp
               в единую систему с AI-автоответами, CRM и аналитикой.
             </p>
-            <div className="grid max-w-xs grid-cols-2 gap-2">
-              <div className="rounded-2xl border border-primary/15 bg-primary/10 p-3">
-                <SignalFlowIcon size={20} className="text-primary" />
-                <div className="mt-2 text-xs font-semibold">Omnichannel</div>
-              </div>
-              <div className="rounded-2xl border border-success/15 bg-success/10 p-3">
-                <RevenueSparkIcon size={20} className="text-success" />
-                <div className="mt-2 text-xs font-semibold">Revenue AI</div>
-              </div>
-            </div>
             <div className="flex items-center gap-3 mt-1">
               {Object.values(SOCIAL_LINKS).map(({ href, label, Icon }) => (
                 <a
@@ -162,13 +151,15 @@ export function Footer() {
           </div>
         </div>
 
+        {/* Bottom bar */}
         <div className="mt-10 pt-6 border-t border-border/20 flex flex-col sm:flex-row items-center justify-between gap-4">
           <div className="text-xs text-muted-foreground/40">
-            © 2026 PREKLEAD.
-            <div>All links open in a new tab.</div>
+            &copy; 2026 PREKLEAD
           </div>
-          <div className="text-xs text-muted-foreground/50">
-            Enterprise-grade security
+          <div className="flex items-center gap-4 text-xs text-muted-foreground/40">
+            <a href="/privacy" className="hover:text-foreground transition-colors">Конфиденциальность</a>
+            <a href="/terms" className="hover:text-foreground transition-colors">Условия</a>
+            <a href="/cookies" className="hover:text-foreground transition-colors">Cookies</a>
           </div>
         </div>
       </div>

@@ -1,22 +1,22 @@
 import React from "react";
 import {
-  Sparkles as SparklesIcon,
+  Sparkle as SparklesIcon,
   ArrowRight as ArrowRightIcon,
   Clock as ClockIcon,
-  TriangleAlert as WarningIcon,
-  TrendingDown as TrendingDownIcon,
-  MessageCircle as ChatCircleIcon,
-  MessageCircleOff as MessageCircleOffIcon,
-  Zap as ZapIcon,
-  Target as TargetIcon,
-  BarChart3 as BarChart3Icon,
-  Send as SendIcon,
+  Warning as WarningIcon,
+  TrendDown as TrendingDownIcon,
+  ChatCircle as ChatCircleIcon,
+  ChatCircleDots as MessageCircleOffIcon,
+  Lightning as ZapIcon,
+  Crosshair as TargetIcon,
+  ChartBar as BarChart3Icon,
+  PaperPlaneRight as SendIcon,
   Brain as BrainIcon,
-  Inbox as InboxIcon,
+  Tray as InboxIcon,
   Users as UsersIcon,
-  LineChart as LineChartIcon,
+  ChartLineUp as LineChartIcon,
   Plug as PlugIcon,
-  Bot as BotIcon,
+  Robot as BotIcon,
   CheckCircle as CheckCircleIcon,
   Star as StarIcon,
   Shield as ShieldIcon,
@@ -25,86 +25,83 @@ import {
   Rocket as RocketIcon,
   Database as DatabaseIcon,
   Cpu as CpuIcon,
-  RotateCcw as RefreshCwIcon,
+  ArrowCounterClockwise as RefreshCwIcon,
   Link as LinkSimpleIcon,
-  Menu as MenuIcon,
+  List as MenuIcon,
   X as XIcon,
   Cookie as CookieIcon,
   Activity as ActivityIcon,
-  MessageSquare as MessageSquareIcon,
-  TrendingUp as TrendingUpIcon,
-  Settings as SettingsIcon,
-  ChevronDown as ChevronDownIcon,
+  ChatText as MessageSquareIcon,
+  TrendUp as TrendingUpIcon,
+  Gear as SettingsIcon,
+  CaretDown as ChevronDownIcon,
   Check as CheckIcon,
   Heart as HeartIcon,
   Eye as EyeIcon,
   Plus as PlusIcon,
   Minus as MinusIcon,
   Bell as BellIcon,
-  LogOut as LogOutIcon,
+  SignOut as LogOutIcon,
   Download as DownloadIcon,
   Upload as UploadIcon,
   File as FileIcon,
   Folder as FolderIcon,
-  Search as SearchIcon,
-  Grid3X3 as GridIcon,
-  Maximize2 as MaximizeIcon,
-  Minimize2 as MinimizeIcon,
+  MagnifyingGlass as SearchIcon,
+  GridFour as GridIcon,
+  ArrowsOut as MaximizeIcon,
+  ArrowsIn as MinimizeIcon,
   Copy as CopyIcon,
-  Trash2 as TrashIcon,
+  Trash as TrashIcon,
   Pencil as EditIcon,
   Archive as ArchiveIcon,
-  AlertCircle as AlertCircleIcon,
+  WarningCircle as AlertCircleIcon,
   Info as InfoIcon,
   Phone as PhoneIcon,
-  Mail as MailIcon,
-  Map as MapIcon,
+  Envelope as MailIcon,
   MapPin as MapPinIcon,
   FolderOpen as FolderOpenIcon,
-  Paperclip as PaperclipIcon,
+  PaperclipHorizontal as PaperclipIcon,
   ArrowUp as ArrowUpIcon,
   FileText as FileTextIcon,
-  DollarSign as DollarSignIcon,
+  CurrencyDollar as DollarSignIcon,
   CreditCard as CreditCardIcon,
-  EyeOff as EyeOffIcon,
+  EyeSlash as EyeOffIcon,
   Lock as LockIcon,
-  CircleHelp as CircleHelpIcon,
+  Question as CircleHelpIcon,
   User as UserIcon,
-  UserRoundCog as UserRoundCogIcon,
-  Sparkles as SparkleIcon,
-  TrendingUp as TrendUpIcon,
-  ChevronLeft as ChevronLeftIcon,
-  ChevronRight as ChevronRightIcon,
-  ChevronUp as ChevronUpIcon,
-  Ellipsis as EllipsisIcon,
-  PanelLeft as PanelLeftIcon,
+  UserCircleGear as UserRoundCogIcon,
+  Sparkle as SparkleIcon,
+  CaretLeft as ChevronLeftIcon,
+  CaretRight as ChevronRightIcon,
+  CaretUp as ChevronUpIcon,
+  DotsThree as EllipsisIcon,
+  SidebarSimple as PanelLeftIcon,
   Circle as CircleIcon,
   ArrowUp,
   FileText,
   DollarSign,
   CreditCard,
-  MessageCircle,
-  CircleCheck,
+  ChatCircle,
+  CheckCircle,
   ArrowRight,
-  Sparkles,
-  Zap,
+  Sparkle,
+  Lightning,
   Activity,
-  Bot,
+  Robot,
   Brain,
   Globe,
   Check,
-  CheckCircle,
   User,
   Bell,
   Lock,
   LogOut,
   Eye,
-  EyeOff,
+  EyeSlash,
   Settings,
   Users,
-  Inbox,
+  Tray as Inbox,
   Star,
-  Mail,
+  Envelope,
   Clock,
   Target,
   Plug,
@@ -113,7 +110,7 @@ import {
   Database,
   Heart,
   Shield,
-  Search,
+  MagnifyingGlass,
   Menu,
   X,
   Plus,
@@ -121,17 +118,17 @@ import {
   Download,
   Upload,
   Copy,
-  Trash2,
+  Trash,
   Pencil,
   Archive,
   Info,
   UserPlus as UserPlusIcon,
   SlidersHorizontal as SlidersHorizontalIcon,
-  Ban,
-  Image,
-  LoaderCircle,
+  Prohibit as Ban,
+  ImageSquare as Image,
+  Spinner as LoaderCircle,
   File as FileIconLucide,
-} from "lucide-react";
+} from "phosphor-react";
 
 // Type for icon component
 interface IconProps {
@@ -142,67 +139,67 @@ interface IconProps {
 }
 
 // NAVIGATION ICONS (regular weight)
-export const NavSparkles = (props: IconProps) => <SparklesIcon size={props.size ?? 16} className={props.className} />;
-export const NavArrowRight = (props: IconProps) => <ArrowRightIcon size={props.size ?? 16} className={props.className} />;
-export const NavClock = (props: IconProps) => <ClockIcon size={props.size ?? 16} className={props.className} />;
-export const NavAlertTriangle = (props: IconProps) => <WarningIcon size={props.size ?? 16} className={props.className} />;
-export const NavTrendingDown = (props: IconProps) => <TrendingDownIcon size={props.size ?? 16} className={props.className} />;
-export const NavMessageSquareOff = (props: IconProps) => <MessageCircleOffIcon size={props.size ?? 16} className={props.className} />;
-export const NavZap = (props: IconProps) => <ZapIcon size={props.size ?? 16} className={props.className} />;
-export const NavTarget = (props: IconProps) => <TargetIcon size={props.size ?? 16} className={props.className} />;
-export const NavBarChart3 = (props: IconProps) => <BarChart3Icon size={props.size ?? 16} className={props.className} />;
-export const NavSend = (props: IconProps) => <SendIcon size={props.size ?? 16} className={props.className} />;
-export const NavBrain = (props: IconProps) => <BrainIcon size={props.size ?? 16} className={props.className} />;
-export const NavInbox = (props: IconProps) => <InboxIcon size={props.size ?? 16} className={props.className} />;
-export const NavUsers = (props: IconProps) => <UsersIcon size={props.size ?? 16} className={props.className} />;
-export const NavLineChart = (props: IconProps) => <LineChartIcon size={props.size ?? 16} className={props.className} />;
-export const NavPlug = (props: IconProps) => <PlugIcon size={props.size ?? 16} className={props.className} />;
-export const NavBot = (props: IconProps) => <BotIcon size={props.size ?? 16} className={props.className} />;
-export const NavMessageCircle = (props: IconProps) => <ChatCircleIcon size={props.size ?? 16} className={props.className} />;
-export const NavCheckCircle = (props: IconProps) => <CheckCircleIcon size={props.size ?? 16} className={props.className} />;
-export const NavStar = (props: IconProps) => <StarIcon size={props.size ?? 16} className={props.className} />;
-export const NavShield = (props: IconProps) => <ShieldIcon size={props.size ?? 16} className={props.className} />;
-export const NavGlobe = (props: IconProps) => <GlobeIcon size={props.size ?? 16} className={props.className} />;
-export const NavInfinity = (props: IconProps) => <InfinityIcon size={props.size ?? 16} className={props.className} />;
-export const NavRocket = (props: IconProps) => <RocketIcon size={props.size ?? 16} className={props.className} />;
-export const NavDatabase = (props: IconProps) => <DatabaseIcon size={props.size ?? 16} className={props.className} />;
-export const NavCpu = (props: IconProps) => <CpuIcon size={props.size ?? 16} className={props.className} />;
-export const NavZapOff = (props: IconProps) => <ZapIcon size={props.size ?? 16} className={props.className} />;
-export const NavRefreshCw = (props: IconProps) => <RefreshCwIcon size={props.size ?? 16} className={props.className} />;
-export const NavLink2 = (props: IconProps) => <LinkSimpleIcon size={props.size ?? 16} className={props.className} />;
-export const NavMenu = (props: IconProps) => <MenuIcon size={props.size ?? 16} className={props.className} />;
-export const NavX = (props: IconProps) => <XIcon size={props.size ?? 16} className={props.className} />;
-export const NavCookie = (props: IconProps) => <CookieIcon size={props.size ?? 16} className={props.className} />;
-export const NavActivity = (props: IconProps) => <ActivityIcon size={props.size ?? 16} className={props.className} />;
-export const NavMessageSquare = (props: IconProps) => <MessageSquareIcon size={props.size ?? 16} className={props.className} />;
-export const NavTrendingUp = (props: IconProps) => <TrendingUpIcon size={props.size ?? 16} className={props.className} />;
-export const NavSettings2 = (props: IconProps) => <SettingsIcon size={props.size ?? 16} className={props.className} />;
-export const NavChevronDown = (props: IconProps) => <ChevronDownIcon size={props.size ?? 16} className={props.className} />;
-export const NavCheck = (props: IconProps) => <CheckIcon size={props.size ?? 16} className={props.className} />;
+export const NavSparkles = (props: IconProps) => <SparklesIcon size={props.size ?? 16} weight="regular" className={props.className} />;
+export const NavArrowRight = (props: IconProps) => <ArrowRightIcon size={props.size ?? 16} weight="regular" className={props.className} />;
+export const NavClock = (props: IconProps) => <ClockIcon size={props.size ?? 16} weight="regular" className={props.className} />;
+export const NavAlertTriangle = (props: IconProps) => <WarningIcon size={props.size ?? 16} weight="regular" className={props.className} />;
+export const NavTrendingDown = (props: IconProps) => <TrendingDownIcon size={props.size ?? 16} weight="regular" className={props.className} />;
+export const NavMessageSquareOff = (props: IconProps) => <MessageCircleOffIcon size={props.size ?? 16} weight="regular" className={props.className} />;
+export const NavZap = (props: IconProps) => <ZapIcon size={props.size ?? 16} weight="regular" className={props.className} />;
+export const NavTarget = (props: IconProps) => <TargetIcon size={props.size ?? 16} weight="regular" className={props.className} />;
+export const NavBarChart3 = (props: IconProps) => <BarChart3Icon size={props.size ?? 16} weight="regular" className={props.className} />;
+export const NavSend = (props: IconProps) => <SendIcon size={props.size ?? 16} weight="regular" className={props.className} />;
+export const NavBrain = (props: IconProps) => <BrainIcon size={props.size ?? 16} weight="regular" className={props.className} />;
+export const NavInbox = (props: IconProps) => <InboxIcon size={props.size ?? 16} weight="regular" className={props.className} />;
+export const NavUsers = (props: IconProps) => <UsersIcon size={props.size ?? 16} weight="regular" className={props.className} />;
+export const NavLineChart = (props: IconProps) => <LineChartIcon size={props.size ?? 16} weight="regular" className={props.className} />;
+export const NavPlug = (props: IconProps) => <PlugIcon size={props.size ?? 16} weight="regular" className={props.className} />;
+export const NavBot = (props: IconProps) => <BotIcon size={props.size ?? 16} weight="regular" className={props.className} />;
+export const NavMessageCircle = (props: IconProps) => <ChatCircleIcon size={props.size ?? 16} weight="regular" className={props.className} />;
+export const NavCheckCircle = (props: IconProps) => <CheckCircleIcon size={props.size ?? 16} weight="regular" className={props.className} />;
+export const NavStar = (props: IconProps) => <StarIcon size={props.size ?? 16} weight="regular" className={props.className} />;
+export const NavShield = (props: IconProps) => <ShieldIcon size={props.size ?? 16} weight="regular" className={props.className} />;
+export const NavGlobe = (props: IconProps) => <GlobeIcon size={props.size ?? 16} weight="regular" className={props.className} />;
+export const NavInfinity = (props: IconProps) => <InfinityIcon size={props.size ?? 16} weight="regular" className={props.className} />;
+export const NavRocket = (props: IconProps) => <RocketIcon size={props.size ?? 16} weight="regular" className={props.className} />;
+export const NavDatabase = (props: IconProps) => <DatabaseIcon size={props.size ?? 16} weight="regular" className={props.className} />;
+export const NavCpu = (props: IconProps) => <CpuIcon size={props.size ?? 16} weight="regular" className={props.className} />;
+export const NavZapOff = (props: IconProps) => <ZapIcon size={props.size ?? 16} weight="regular" className={props.className} />;
+export const NavRefreshCw = (props: IconProps) => <RefreshCwIcon size={props.size ?? 16} weight="regular" className={props.className} />;
+export const NavLink2 = (props: IconProps) => <LinkSimpleIcon size={props.size ?? 16} weight="regular" className={props.className} />;
+export const NavMenu = (props: IconProps) => <MenuIcon size={props.size ?? 16} weight="regular" className={props.className} />;
+export const NavX = (props: IconProps) => <XIcon size={props.size ?? 16} weight="regular" className={props.className} />;
+export const NavCookie = (props: IconProps) => <CookieIcon size={props.size ?? 16} weight="regular" className={props.className} />;
+export const NavActivity = (props: IconProps) => <ActivityIcon size={props.size ?? 16} weight="regular" className={props.className} />;
+export const NavMessageSquare = (props: IconProps) => <MessageSquareIcon size={props.size ?? 16} weight="regular" className={props.className} />;
+export const NavTrendingUp = (props: IconProps) => <TrendingUpIcon size={props.size ?? 16} weight="regular" className={props.className} />;
+export const NavSettings2 = (props: IconProps) => <SettingsIcon size={props.size ?? 16} weight="regular" className={props.className} />;
+export const NavChevronDown = (props: IconProps) => <ChevronDownIcon size={props.size ?? 16} weight="regular" className={props.className} />;
+export const NavCheck = (props: IconProps) => <CheckIcon size={props.size ?? 16} weight="regular" className={props.className} />;
 
-// KEY ELEMENTS (just rendered with default lucide style)
-export const KeySparkles = (props: IconProps) => <SparklesIcon size={props.size ?? 16} className={props.className} />;
-export const KeyBrain = (props: IconProps) => <BrainIcon size={props.size ?? 16} className={props.className} />;
-export const KeyBolt = (props: IconProps) => <ZapIcon size={props.size ?? 16} className={props.className} />;
-export const KeyActivity = (props: IconProps) => <ActivityIcon size={props.size ?? 16} className={props.className} />;
-export const KeyShield = (props: IconProps) => <ShieldIcon size={props.size ?? 16} className={props.className} />;
-export const KeyCheckCircle = (props: IconProps) => <CheckCircleIcon size={props.size ?? 16} className={props.className} />;
-export const KeyBot = (props: IconProps) => <BotIcon size={props.size ?? 16} className={props.className} />;
-export const KeyStar = (props: IconProps) => <StarIcon size={props.size ?? 16} className={props.className} />;
-export const KeyMessageCircle = (props: IconProps) => <ChatCircleIcon size={props.size ?? 16} className={props.className} />;
+// KEY ELEMENTS
+export const KeySparkles = (props: IconProps) => <SparklesIcon size={props.size ?? 16} weight="regular" className={props.className} />;
+export const KeyBrain = (props: IconProps) => <BrainIcon size={props.size ?? 16} weight="regular" className={props.className} />;
+export const KeyBolt = (props: IconProps) => <ZapIcon size={props.size ?? 16} weight="regular" className={props.className} />;
+export const KeyActivity = (props: IconProps) => <ActivityIcon size={props.size ?? 16} weight="regular" className={props.className} />;
+export const KeyShield = (props: IconProps) => <ShieldIcon size={props.size ?? 16} weight="regular" className={props.className} />;
+export const KeyCheckCircle = (props: IconProps) => <CheckCircleIcon size={props.size ?? 16} weight="regular" className={props.className} />;
+export const KeyBot = (props: IconProps) => <BotIcon size={props.size ?? 16} weight="regular" className={props.className} />;
+export const KeyStar = (props: IconProps) => <StarIcon size={props.size ?? 16} weight="regular" className={props.className} />;
+export const KeyMessageCircle = (props: IconProps) => <ChatCircleIcon size={props.size ?? 16} weight="regular" className={props.className} />;
 
-// IMPORTANT ACTIONS (bold weight — lucide renders all at same stroke by default)
-export const ActionSend = (props: IconProps) => <SendIcon size={props.size ?? 16} className={props.className} />;
-export const ActionCheck = (props: IconProps) => <CheckIcon size={props.size ?? 16} className={props.className} />;
-export const ActionCheckFat = (props: IconProps) => <CheckCircleIcon size={props.size ?? 16} className={props.className} />;
-export const ActionRocket = (props: IconProps) => <RocketIcon size={props.size ?? 16} className={props.className} />;
-export const ActionZap = (props: IconProps) => <ZapIcon size={props.size ?? 16} className={props.className} />;
-export const ActionArrowRight = (props: IconProps) => <ArrowRightIcon size={props.size ?? 16} className={props.className} />;
-export const ActionPlus = (props: IconProps) => <PlusIcon size={props.size ?? 16} className={props.className} />;
-export const ActionMinus = (props: IconProps) => <MinusIcon size={props.size ?? 16} className={props.className} />;
-export const ActionTrash = (props: IconProps) => <TrashIcon size={props.size ?? 16} className={props.className} />;
-export const ActionDownload = (props: IconProps) => <DownloadIcon size={props.size ?? 16} className={props.className} />;
-export const ActionUpload = (props: IconProps) => <UploadIcon size={props.size ?? 16} className={props.className} />;
+// IMPORTANT ACTIONS (bold weight)
+export const ActionSend = (props: IconProps) => <SendIcon size={props.size ?? 16} weight="bold" className={props.className} />;
+export const ActionCheck = (props: IconProps) => <CheckIcon size={props.size ?? 16} weight="bold" className={props.className} />;
+export const ActionCheckFat = (props: IconProps) => <CheckCircleIcon size={props.size ?? 16} weight="fill" className={props.className} />;
+export const ActionRocket = (props: IconProps) => <RocketIcon size={props.size ?? 16} weight="bold" className={props.className} />;
+export const ActionZap = (props: IconProps) => <ZapIcon size={props.size ?? 16} weight="bold" className={props.className} />;
+export const ActionArrowRight = (props: IconProps) => <ArrowRightIcon size={props.size ?? 16} weight="bold" className={props.className} />;
+export const ActionPlus = (props: IconProps) => <PlusIcon size={props.size ?? 16} weight="bold" className={props.className} />;
+export const ActionMinus = (props: IconProps) => <MinusIcon size={props.size ?? 16} weight="bold" className={props.className} />;
+export const ActionTrash = (props: IconProps) => <TrashIcon size={props.size ?? 16} weight="bold" className={props.className} />;
+export const ActionDownload = (props: IconProps) => <DownloadIcon size={props.size ?? 16} weight="bold" className={props.className} />;
+export const ActionUpload = (props: IconProps) => <UploadIcon size={props.size ?? 16} weight="bold" className={props.className} />;
 
 // SOCIAL & COMMUNICATION ICONS (inline SVG for brand icons)
 export function TelegramIcon(props: IconProps) {
@@ -332,7 +329,7 @@ export const MagnifyingGlass = SearchIcon;
 export const Trash = TrashIcon;
 export const Pencil = EditIcon;
 export const WarningCircle = AlertCircleIcon;
-export const MapTrifold = MapIcon;
+export const MapTrifold = MapPinIcon;
 export const Telephone = PhoneIcon;
 export const GridFour = GridIcon;
 export const ArrowsOut = MaximizeIcon;
@@ -363,7 +360,7 @@ export const Archive = ArchiveIcon;
 export const Info = InfoIcon;
 export const FolderOpen = FolderOpenIcon;
 export const Envelope = MailIcon;
-export const ChatCircle = MessageCircle;
+export const ChatCircle = ChatCircleIcon;
 export const PaperPlaneRight = SendIcon;
 export const PaperPlaneTilt = SendIcon;
 export const ChartBar = BarChart3Icon;
