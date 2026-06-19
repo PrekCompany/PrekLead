@@ -22,11 +22,15 @@ import { Route as AppRouteImport } from './routes/app'
 import { Route as AboutRouteImport } from './routes/about'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as AppIndexRouteImport } from './routes/app.index'
+import { Route as AppTeamRouteImport } from './routes/app.team'
+import { Route as AppSettingsRouteImport } from './routes/app.settings'
 import { Route as AppLeadsRouteImport } from './routes/app.leads'
 import { Route as AppIntegrationsRouteImport } from './routes/app.integrations'
 import { Route as AppInboxRouteImport } from './routes/app.inbox'
 import { Route as AppCrmRouteImport } from './routes/app.crm'
+import { Route as AppBillingRouteImport } from './routes/app.billing'
 import { Route as AppAnalyticsRouteImport } from './routes/app.analytics'
+import { Route as AppAiSettingsRouteImport } from './routes/app.ai-settings'
 
 const TermsRoute = TermsRouteImport.update({
   id: '/terms',
@@ -93,6 +97,16 @@ const AppIndexRoute = AppIndexRouteImport.update({
   path: '/',
   getParentRoute: () => AppRoute,
 } as any)
+const AppTeamRoute = AppTeamRouteImport.update({
+  id: '/team',
+  path: '/team',
+  getParentRoute: () => AppRoute,
+} as any)
+const AppSettingsRoute = AppSettingsRouteImport.update({
+  id: '/settings',
+  path: '/settings',
+  getParentRoute: () => AppRoute,
+} as any)
 const AppLeadsRoute = AppLeadsRouteImport.update({
   id: '/leads',
   path: '/leads',
@@ -113,9 +127,19 @@ const AppCrmRoute = AppCrmRouteImport.update({
   path: '/crm',
   getParentRoute: () => AppRoute,
 } as any)
+const AppBillingRoute = AppBillingRouteImport.update({
+  id: '/billing',
+  path: '/billing',
+  getParentRoute: () => AppRoute,
+} as any)
 const AppAnalyticsRoute = AppAnalyticsRouteImport.update({
   id: '/analytics',
   path: '/analytics',
+  getParentRoute: () => AppRoute,
+} as any)
+const AppAiSettingsRoute = AppAiSettingsRouteImport.update({
+  id: '/ai-settings',
+  path: '/ai-settings',
   getParentRoute: () => AppRoute,
 } as any)
 
@@ -132,11 +156,15 @@ export interface FileRoutesByFullPath {
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/support': typeof SupportRoute
   '/terms': typeof TermsRoute
+  '/app/ai-settings': typeof AppAiSettingsRoute
   '/app/analytics': typeof AppAnalyticsRoute
+  '/app/billing': typeof AppBillingRoute
   '/app/crm': typeof AppCrmRoute
   '/app/inbox': typeof AppInboxRoute
   '/app/integrations': typeof AppIntegrationsRoute
   '/app/leads': typeof AppLeadsRoute
+  '/app/settings': typeof AppSettingsRoute
+  '/app/team': typeof AppTeamRoute
   '/app/': typeof AppIndexRoute
 }
 export interface FileRoutesByTo {
@@ -151,11 +179,15 @@ export interface FileRoutesByTo {
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/support': typeof SupportRoute
   '/terms': typeof TermsRoute
+  '/app/ai-settings': typeof AppAiSettingsRoute
   '/app/analytics': typeof AppAnalyticsRoute
+  '/app/billing': typeof AppBillingRoute
   '/app/crm': typeof AppCrmRoute
   '/app/inbox': typeof AppInboxRoute
   '/app/integrations': typeof AppIntegrationsRoute
   '/app/leads': typeof AppLeadsRoute
+  '/app/settings': typeof AppSettingsRoute
+  '/app/team': typeof AppTeamRoute
   '/app': typeof AppIndexRoute
 }
 export interface FileRoutesById {
@@ -172,11 +204,15 @@ export interface FileRoutesById {
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/support': typeof SupportRoute
   '/terms': typeof TermsRoute
+  '/app/ai-settings': typeof AppAiSettingsRoute
   '/app/analytics': typeof AppAnalyticsRoute
+  '/app/billing': typeof AppBillingRoute
   '/app/crm': typeof AppCrmRoute
   '/app/inbox': typeof AppInboxRoute
   '/app/integrations': typeof AppIntegrationsRoute
   '/app/leads': typeof AppLeadsRoute
+  '/app/settings': typeof AppSettingsRoute
+  '/app/team': typeof AppTeamRoute
   '/app/': typeof AppIndexRoute
 }
 export interface FileRouteTypes {
@@ -194,11 +230,15 @@ export interface FileRouteTypes {
     | '/sitemap.xml'
     | '/support'
     | '/terms'
+    | '/app/ai-settings'
     | '/app/analytics'
+    | '/app/billing'
     | '/app/crm'
     | '/app/inbox'
     | '/app/integrations'
     | '/app/leads'
+    | '/app/settings'
+    | '/app/team'
     | '/app/'
   fileRoutesByTo: FileRoutesByTo
   to:
@@ -213,11 +253,15 @@ export interface FileRouteTypes {
     | '/sitemap.xml'
     | '/support'
     | '/terms'
+    | '/app/ai-settings'
     | '/app/analytics'
+    | '/app/billing'
     | '/app/crm'
     | '/app/inbox'
     | '/app/integrations'
     | '/app/leads'
+    | '/app/settings'
+    | '/app/team'
     | '/app'
   id:
     | '__root__'
@@ -233,11 +277,15 @@ export interface FileRouteTypes {
     | '/sitemap.xml'
     | '/support'
     | '/terms'
+    | '/app/ai-settings'
     | '/app/analytics'
+    | '/app/billing'
     | '/app/crm'
     | '/app/inbox'
     | '/app/integrations'
     | '/app/leads'
+    | '/app/settings'
+    | '/app/team'
     | '/app/'
   fileRoutesById: FileRoutesById
 }
@@ -349,6 +397,20 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof AppIndexRouteImport
       parentRoute: typeof AppRoute
     }
+    '/app/team': {
+      id: '/app/team'
+      path: '/team'
+      fullPath: '/app/team'
+      preLoaderRoute: typeof AppTeamRouteImport
+      parentRoute: typeof AppRoute
+    }
+    '/app/settings': {
+      id: '/app/settings'
+      path: '/settings'
+      fullPath: '/app/settings'
+      preLoaderRoute: typeof AppSettingsRouteImport
+      parentRoute: typeof AppRoute
+    }
     '/app/leads': {
       id: '/app/leads'
       path: '/leads'
@@ -377,6 +439,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof AppCrmRouteImport
       parentRoute: typeof AppRoute
     }
+    '/app/billing': {
+      id: '/app/billing'
+      path: '/billing'
+      fullPath: '/app/billing'
+      preLoaderRoute: typeof AppBillingRouteImport
+      parentRoute: typeof AppRoute
+    }
     '/app/analytics': {
       id: '/app/analytics'
       path: '/analytics'
@@ -384,24 +453,39 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof AppAnalyticsRouteImport
       parentRoute: typeof AppRoute
     }
+    '/app/ai-settings': {
+      id: '/app/ai-settings'
+      path: '/ai-settings'
+      fullPath: '/app/ai-settings'
+      preLoaderRoute: typeof AppAiSettingsRouteImport
+      parentRoute: typeof AppRoute
+    }
   }
 }
 
 interface AppRouteChildren {
+  AppAiSettingsRoute: typeof AppAiSettingsRoute
   AppAnalyticsRoute: typeof AppAnalyticsRoute
+  AppBillingRoute: typeof AppBillingRoute
   AppCrmRoute: typeof AppCrmRoute
   AppInboxRoute: typeof AppInboxRoute
   AppIntegrationsRoute: typeof AppIntegrationsRoute
   AppLeadsRoute: typeof AppLeadsRoute
+  AppSettingsRoute: typeof AppSettingsRoute
+  AppTeamRoute: typeof AppTeamRoute
   AppIndexRoute: typeof AppIndexRoute
 }
 
 const AppRouteChildren: AppRouteChildren = {
+  AppAiSettingsRoute: AppAiSettingsRoute,
   AppAnalyticsRoute: AppAnalyticsRoute,
+  AppBillingRoute: AppBillingRoute,
   AppCrmRoute: AppCrmRoute,
   AppInboxRoute: AppInboxRoute,
   AppIntegrationsRoute: AppIntegrationsRoute,
   AppLeadsRoute: AppLeadsRoute,
+  AppSettingsRoute: AppSettingsRoute,
+  AppTeamRoute: AppTeamRoute,
   AppIndexRoute: AppIndexRoute,
 }
 

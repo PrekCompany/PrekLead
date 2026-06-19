@@ -13,16 +13,26 @@ import {
   CaretRight,
   Sparkle,
   Gear,
+  Robot,
+  CreditCard,
+  UserSwitch,
 } from "phosphor-react";
 import { useState } from "react";
 
 const ITEMS = [
   { to: "/app", icon: Brain, label: "AI Core", exact: true },
-  { to: "/app/inbox", icon: Tray, label: "Inbox", badge: 3 },
-  { to: "/app/leads", icon: Target, label: "Leads" },
+  { to: "/app/inbox", icon: Tray, label: "Сообщения", badge: 3 },
+  { to: "/app/leads", icon: Target, label: "Лиды" },
   { to: "/app/crm", icon: Users, label: "CRM" },
-  { to: "/app/analytics", icon: ChartBar, label: "Analytics" },
-  { to: "/app/integrations", icon: Plug, label: "Integrations" },
+  { to: "/app/analytics", icon: ChartBar, label: "Аналитика" },
+  { to: "/app/integrations", icon: Plug, label: "Интеграции" },
+  { to: "/app/ai-settings", icon: Robot, label: "Настройки ИИ" },
+  { to: "/app/team", icon: UserSwitch, label: "Команда" },
+];
+
+const BOTTOM_ITEMS = [
+  { to: "/app/billing", icon: CreditCard, label: "Оплата" },
+  { to: "/app/settings", icon: Settings, label: "Настройки" },
 ];
 
 export function AppShell() {
@@ -43,7 +53,7 @@ export function AppShell() {
           </Link>
         </div>
 
-        <nav className="flex-1 px-3 space-y-0.5">
+        <nav className="flex-1 px-3 space-y-0.5 overflow-auto">
           {ITEMS.map((i) => {
             const active = i.exact ? pathname === i.to : pathname.startsWith(i.to);
             return (
@@ -80,6 +90,40 @@ export function AppShell() {
           })}
         </nav>
 
+        <div className="px-3 mt-1 mb-1">
+          <div className="h-px bg-border/40" />
+        </div>
+
+        <nav className="px-3 space-y-0.5">
+          {BOTTOM_ITEMS.map((i) => {
+            const active = pathname.startsWith(i.to);
+            return (
+              <Link
+                key={i.to}
+                to={i.to}
+                className={`flex items-center gap-3 px-3 py-2.5 rounded-xl text-sm transition-all duration-200 group relative ${
+                  active
+                    ? "bg-primary/12 text-primary border border-primary/25"
+                    : "text-muted-foreground hover:text-foreground hover:bg-white/[0.04]"
+                }`}
+              >
+                {active && (
+                  <span className="absolute left-0 top-1/2 -translate-y-1/2 w-0.5 h-6 rounded-full bg-primary shadow-lg shadow-primary/50" />
+                )}
+                <div className={`size-8 rounded-lg grid place-items-center transition-all duration-200 ${
+                  active
+                    ? "bg-primary/20 text-primary shadow-sm shadow-primary/20"
+                    : "bg-white/5 text-muted-foreground group-hover:text-foreground group-hover:bg-white/[0.07]"
+                }`}>
+                  <i.icon size={16} className="transition-transform duration-200 group-hover:scale-110" />
+                </div>
+                <span className="flex-1 font-medium text-[13px]">{i.label}</span>
+                {active && <CaretRight size={12} className="text-primary/60" />}
+              </Link>
+            );
+          })}
+        </nav>
+
         <div className="p-3">
           <div className="glass-strong rounded-2xl p-4 space-y-3 group hover:border-primary/30 transition-all duration-300">
             <div className="flex items-center gap-3">
@@ -107,10 +151,10 @@ export function AppShell() {
                 Log Out
               </Link>
               <Link
-                to="/app"
+                to="/app/settings"
                 className="flex items-center justify-center size-7 rounded-lg text-[10px] text-muted-foreground hover:text-foreground hover:bg-white/5 transition-all"
               >
-                <Gear size={12} />
+                <Settings size={12} />
               </Link>
             </div>
           </div>
