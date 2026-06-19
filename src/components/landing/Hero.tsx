@@ -1,6 +1,6 @@
 import { Link } from "@tanstack/react-router";
 import { useEffect, useState } from "react";
-import { ArrowRight, Sparkles, CheckCircle, Bot, Activity } from "../PhosphorIcons";
+import { ArrowRight, Sparkles, ChatCircle, Shield } from "../PhosphorIcons";
 
 const stats = [
   { label: "Сообщений обработано", value: "24/7" },
@@ -33,6 +33,11 @@ export function Hero() {
       <div className="absolute top-1/4 left-[15%] size-72 rounded-full bg-primary/8 blur-[120px] animate-float" />
       <div className="absolute top-1/3 right-[10%] size-56 rounded-full bg-accent/8 blur-[100px] animate-float" style={{ animationDelay: "-2s", animationDuration: "6s" }} />
       <div className="absolute bottom-1/4 left-1/3 size-48 rounded-full bg-primary/5 blur-[80px] animate-float" style={{ animationDelay: "-4s", animationDuration: "5s" }} />
+
+      {/* Decorative floating particles */}
+      <div className="absolute top-[15%] right-[5%] size-1.5 rounded-full bg-primary/60 animate-float opacity-70" style={{ animationDuration: "3s" }} />
+      <div className="absolute top-[45%] left-[5%] size-1 rounded-full bg-accent/60 animate-float opacity-50" style={{ animationDuration: "4s", animationDelay: "-1s" }} />
+      <div className="absolute top-[70%] right-[12%] size-2 rounded-full bg-primary/40 animate-float opacity-60" style={{ animationDuration: "5s", animationDelay: "-3s" }} />
 
       <div className="relative w-full mx-auto max-w-7xl px-4">
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
@@ -80,40 +85,40 @@ export function Hero() {
               </Link>
             </div>
 
-            {/* Trust / social proof with animated counter */}
-            <div className="mt-12 flex flex-wrap items-center gap-6 text-sm text-muted-foreground/60">
-              <span className="flex items-center gap-1.5">
-                <CheckCircle size={14} className="text-success" />
-                Без кредитной карты
-              </span>
-              <span className="flex items-center gap-1.5">
-                <Bot size={14} className="text-primary" />
-                GPT-4o & Claude
-              </span>
-              <span className="flex items-center gap-1.5">
-                <Activity size={14} className="text-primary" />
-                3 канала за 5 минут
-              </span>
-            </div>
-
-            {/* Animated stats strip */}
-            <div className="mt-10 flex gap-6 lg:gap-10">
+            {/* Social proof — enriched grid */}
+            <div className="mt-12 grid grid-cols-2 sm:grid-cols-4 gap-3">
               {stats.map((s, idx) => (
                 <div
                   key={idx}
-                  className={`transition-all duration-500 ${
-                    idx === activeStat ? "opacity-100 scale-105" : "opacity-50 scale-100"
+                  className={`glass rounded-xl px-4 py-3 border border-primary/5 transition-all duration-500 ${
+                    idx === activeStat ? "border-primary/30 glow-primary scale-105" : "opacity-70 hover:opacity-100"
                   }`}
                 >
-                  <div className="font-display text-2xl font-bold text-gradient-primary">{s.value}</div>
-                  <div className="text-[10px] text-muted-foreground/60 mt-0.5 whitespace-nowrap">{s.label}</div>
+                  <div className="font-display text-xl font-bold text-gradient-primary">{s.value}</div>
+                  <div className="text-[10px] text-muted-foreground/60 mt-0.5">{s.label}</div>
                 </div>
               ))}
+            </div>
+
+            {/* Trust badges row */}
+            <div className="mt-5 flex flex-wrap items-center gap-4">
+              <span className="flex items-center gap-1.5 text-[11px] text-muted-foreground/50 px-3 py-1.5 glass rounded-full border border-border/20">
+                <Shield size={12} className="text-success" />
+                Без кредитной карты
+              </span>
+              <span className="flex items-center gap-1.5 text-[11px] text-muted-foreground/50 px-3 py-1.5 glass rounded-full border border-border/20">
+                <ChatCircle size={12} className="text-primary" />
+                3 канала за 5 минут
+              </span>
+              <span className="flex items-center gap-1.5 text-[11px] text-muted-foreground/50 px-3 py-1.5 glass rounded-full border border-border/20">
+                <Sparkles size={12} className="text-primary" />
+                GPT-4o & Claude
+              </span>
             </div>
           </div>
 
           {/* Right — Demo chat mockup */}
-          <div className="relative">
+          <div className="relative hidden lg:block">
             {/* Glow behind mockup */}
             <div className="absolute -inset-20 bg-gradient-to-r from-primary/10 via-primary/5 to-accent/10 blur-[100px] rounded-3xl" />
 
@@ -127,7 +132,7 @@ export function Hero() {
                     <div className="size-2.5 rounded-full bg-success/60" />
                   </div>
                   <div className="flex items-center gap-2 text-[11px] text-muted-foreground/60 font-medium">
-                    <Bot size={14} className="text-primary" />
+                    <ChatCircle size={14} className="text-primary" />
                     AI-ассистент — Telegram / Instagram / WhatsApp
                   </div>
                   <div className="ml-auto flex items-center gap-1.5">
@@ -148,11 +153,11 @@ export function Hero() {
                   <div className="flex items-start gap-2.5 justify-end">
                     <div className="max-w-[75%] bg-gradient-to-br from-primary/20 to-primary/5 rounded-2xl rounded-tr-sm px-3.5 py-2.5 border border-primary/15">
                       <div className="text-xs font-medium text-primary flex items-center gap-1">
-                        <Bot size={12} /> AI-ассистент
+                        <Sparkles size={12} /> AI-ассистент
                         <span className="text-[10px] text-muted-foreground/40">~ 1.2s</span>
                       </div>
                       <p className="text-sm text-foreground/90 mt-0.5">
-                        Добрый день! Конечно. При годовой подписке — скидка 17%. Также для онлайн-школ у нас есть специальный тариф с интеграцией платёжных систем. Хотите, расскажу подробнее? 🚀
+                        Добрый день! Конечно. При годовой подписке — скидка 17%. Также для онлайн-школ у нас есть специальный тариф с интеграцией платёжных систем. Хотите, расскажу подробнее?
                       </p>
                     </div>
                     <div className="size-7 rounded-full bg-gradient-to-br from-primary to-accent grid place-items-center text-[10px] font-bold text-primary-foreground shrink-0 shadow-lg shadow-primary/30">AI</div>

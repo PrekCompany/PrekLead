@@ -1,6 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useState, useEffect } from "react";
-import { Gear } from "phosphor-react";
+import { Gear } from "../components/PhosphorIcons";
 import { Nav } from "@/components/landing/Nav";
 import { Footer } from "@/components/landing/Footer";
 import { BackLink } from "@/components/BackLink";

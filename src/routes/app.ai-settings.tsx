@@ -1,6 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useState } from "react";
-import { Sparkle, Brain, Globe, Question, ChatText, Check } from "phosphor-react";
+import { Sparkle, Brain, Globe, Question, ChatText, Check } from "../components/PhosphorIcons";
 
 export const Route = createFileRoute("/app/ai-settings")({
   head: () => ({ meta: [{ title: "Настройки ИИ — PREKLEAD" }] }),

@@ -1,6 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useState } from "react";
-import { Sparkle, Check, CreditCard, FileText, ArrowRight } from "phosphor-react";
+import { Sparkle, Check, CreditCard, FileText, ArrowRight } from "../components/PhosphorIcons";
 import { Link } from "@tanstack/react-router";
 
 export const Route = createFileRoute("/app/billing")({

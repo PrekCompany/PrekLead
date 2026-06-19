@@ -8,14 +8,15 @@ export function FAQ() {
   const { ref, inView } = useScrollReveal();
 
   return (
-    <section id="faq" className="py-20" ref={ref}>
+    <section id="faq" className="relative py-16 md:py-20" ref={ref}>
+      <div className="absolute inset-0 bg-[radial-gradient(ellipse_50%_50%_at_50%_50%,oklch(0.62_0.24_258/0.06),transparent_70%)] pointer-events-none" />
       <div className="mx-auto max-w-3xl px-4">
-        <div className={`text-center mb-10 transition-all duration-700 ${inView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'}`}>
+        <div className={`text-center mb-8 md:mb-10 transition-all duration-700 ${inView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'}`}>
           <div className="text-xs font-semibold uppercase tracking-widest text-primary mb-3">FAQ</div>
           <h2 className="font-display text-3xl md:text-5xl font-semibold text-gradient">
             Частые вопросы
           </h2>
-          <p className="mt-3 text-sm text-muted-foreground">Всё, что нужно знать перед стартом</p>
+          <p className="mt-2 md:mt-3 text-sm text-muted-foreground">Всё, что нужно знать перед стартом</p>
         </div>
         <div className="space-y-2">
           {faq.map((f, i) => (

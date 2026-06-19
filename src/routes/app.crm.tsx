@@ -1,7 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { messages, leads } from "@/lib/mock-data";
 import { useState } from "react";
-import { Sparkle, ChatCircle, FileText, CurrencyDollar } from "phosphor-react";
+import { Sparkle, ChatCircle, FileText, CurrencyDollar } from "../components/PhosphorIcons";
 
 export const Route = createFileRoute("/app/crm")({
   head: () => ({ meta: [{ title: "CRM — PREKLEAD" }] }),

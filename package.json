@@ -8,7 +8,7 @@
     "build": "vite build && node scripts/generate-index.mjs",
     "build:dev": "vite build --mode development",
     "preview": "vite preview",
-    "deploy": "npm run build && npx --prefix server wrangler pages deploy dist/client --branch production",
+    "deploy": "npm run build && npx --prefix server wrangler pages deploy dist/client --branch master",
     "dev:pages": "npx --prefix server wrangler pages dev dist/client",
     "lint": "eslint .",
     "format": "prettier --write ."

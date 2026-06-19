@@ -1,6 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useState } from "react";
-import { User, Bell, Lock, SignOut, Check, Eye, EyeSlash } from "phosphor-react";
+import { User, Bell, Lock, SignOut, Check, Eye, EyeSlash } from "../components/PhosphorIcons";
 import { Link } from "@tanstack/react-router";
 
 export const Route = createFileRoute("/app/settings")({

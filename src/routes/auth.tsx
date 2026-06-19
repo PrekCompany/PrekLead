@@ -1,6 +1,6 @@
 import { createFileRoute, Link, useNavigate } from "@tanstack/react-router";
 import { Logo } from "@/components/Brand";
-import { ArrowRight } from "phosphor-react";
+import { ArrowRight } from "../components/PhosphorIcons";
 import { useState } from "react";
 
 export const Route = createFileRoute("/auth")({

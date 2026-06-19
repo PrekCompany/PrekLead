@@ -66,29 +66,29 @@ export function Pricing({ standalone = false }: { standalone?: boolean }) {
   const { ref, inView } = useScrollReveal(0.05);
 
   return (
-    <section id="pricing" className={`relative ${standalone ? "pt-32" : ""} py-20`} ref={ref}>
+    <section id="pricing" className={`relative ${standalone ? "pt-32" : ""} py-16 md:py-20`} ref={ref}>
       {/* Background glow behind recommended */}
       <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
         <div className="size-[600px] rounded-full bg-primary/5 blur-[150px]" />
       </div>
 
       <div className="mx-auto max-w-6xl px-4">
-        <div className={`text-center mb-10 transition-all duration-700 ${inView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'}`}>
+        <div className={`text-center mb-8 md:mb-10 transition-all duration-700 ${inView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'}`}>
           <div className="text-xs font-semibold uppercase tracking-widest text-primary mb-3">Тарифы</div>
           <h2 className="font-display text-3xl md:text-5xl font-semibold text-gradient">
             PREKLEAD Pricing
           </h2>
-          <p className="mt-4 text-muted-foreground">Без скрытых платежей. Отмена в один клик.</p>
+          <p className="mt-3 md:mt-4 text-sm md:text-base text-muted-foreground">Без скрытых платежей. Отмена в один клик.</p>
         </div>
 
-        <div className="grid md:grid-cols-3 gap-5">
+        <div className="grid md:grid-cols-3 gap-4 md:gap-5">
           {PLANS.map((p, idx) => (
             <div
               key={p.name}
-              className={`relative rounded-3xl p-6 transition-all duration-500 hover:-translate-y-2 group ${
+              className={`relative rounded-2xl md:rounded-3xl p-5 md:p-6 transition-all duration-500 hover:-translate-y-2 group ${
                 p.recommended
-                  ? "glass-strong border-primary/50 glow-primary hover:glow-strong"
-                  : "glass hover:border-primary/30"
+                  ? "glass-strong border-primary/50 glow-primary hover:glow-strong hover:scale-[1.03] hover:border-primary/70"
+                  : "glass hover:border-primary/30 hover:scale-[1.02] hover:bg-white/[0.03]"
               } ${inView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}
               style={{ transitionDelay: `${idx * 150}ms` }}
             >
@@ -108,8 +108,8 @@ export function Pricing({ standalone = false }: { standalone?: boolean }) {
               <ul className="mt-6 space-y-2.5">
                 {p.features.map((f) => (
                   <li key={f} className="flex items-start gap-2 text-sm">
-                    <div className="size-5 rounded-full bg-primary/15 grid place-items-center shrink-0 mt-0.5 group-hover:scale-110 transition-transform">
-                      <Check size={12} className="text-primary" />
+                    <div className="size-5 rounded-full bg-primary/15 grid place-items-center shrink-0 mt-0.5 group-hover:scale-110 group-hover:bg-primary/25 transition-all duration-300">
+                      <Check size={12} className="text-primary group-hover:scale-110 transition-transform duration-300" />
                     </div>
                     <span className="text-muted-foreground">{f}</span>
                   </li>

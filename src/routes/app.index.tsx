@@ -1,6 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { AICore } from "@/components/app/AICore";
-import { Activity, ChatText, TrendUp, Lightning, ArrowUp, Sparkle } from "phosphor-react";
+import { Activity, ChatText, TrendUp, Lightning, ArrowUp, Sparkle } from "../components/PhosphorIcons";
 import { useEffect, useState } from "react";
 
 export const Route = createFileRoute("/app/")({

@@ -11,7 +11,7 @@ import {
   Shield,
   User,
   Eye,
-} from "phosphor-react";
+} from "../components/PhosphorIcons";
 import * as Dialog from "@radix-ui/react-dialog";
 
 export const Route = createFileRoute("/app/team")({

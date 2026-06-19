@@ -7,7 +7,7 @@ import {
   Spinner,
   Check,
   X,
-} from "phosphor-react";
+} from "../components/PhosphorIcons";
 import { useState } from "react";
 import * as Switch from "@radix-ui/react-switch";
 import * as Tooltip from "@radix-ui/react-tooltip";

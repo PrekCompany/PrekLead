@@ -100,6 +100,28 @@
   --background: oklch(0.16 0.02 265);
 }
 
+/* Section divider — glowing horizontal line between landing sections */
+.section-glow-divider {
+  height: 1px;
+  width: 30%;
+  max-width: 200px;
+  margin: 0 auto;
+  background: linear-gradient(90deg, transparent, oklch(0.62 0.24 258 / 0.35), transparent);
+  position: relative;
+}
+.section-glow-divider::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 60px;
+  height: 4px;
+  border-radius: 50%;
+  background: oklch(0.62 0.24 258 / 0.15);
+  filter: blur(6px);
+}
+
 @layer base {
   * {
     border-color: var(--color-border);
@@ -116,6 +138,20 @@
     -webkit-font-smoothing: antialiased;
     background-image: var(--gradient-mesh);
     background-attachment: fixed;
+    position: relative;
+  }
+
+  /* Noise texture overlay — subtle grain for premium feel */
+  body::after {
+    content: "";
+    position: fixed;
+    inset: 0;
+    z-index: 9999;
+    pointer-events: none;
+    opacity: 0.035;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+    background-repeat: repeat;
+    background-size: 256px 256px;
   }
 
   h1, h2, h3, h4 {

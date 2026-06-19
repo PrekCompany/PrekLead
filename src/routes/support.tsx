@@ -2,7 +2,7 @@ import { createFileRoute } from "@tanstack/react-router";
 import { Nav } from "@/components/landing/Nav";
 import { Footer } from "@/components/landing/Footer";
 import { BackLink } from "@/components/BackLink";
-import { ChatCircle, PaperPlaneRight, Envelope } from "phosphor-react";
+import { ChatCircle, PaperPlaneRight, Envelope } from "../components/PhosphorIcons";
 import { useState } from "react";
 
 export const Route = createFileRoute("/support")({

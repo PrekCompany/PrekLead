@@ -11,7 +11,7 @@ import {
   Lightning,
   Shield,
   Planet,
-} from "phosphor-react";
+} from "../PhosphorIcons";
 import { useEffect, useState } from "react";
 
 const NODES = [

@@ -1,7 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { Nav } from "@/components/landing/Nav";
 import { Hero } from "@/components/landing/Hero";
-import { Problem, Solution, HowItWorks, Features } from "@/components/landing/Sections";
+import { Problem, Solution, HowItWorks, Features, StatsBar } from "@/components/landing/Sections";
 import { Integrations } from "@/components/landing/Integrations";
 import { Pricing } from "@/components/landing/Pricing";
 import { FAQ } from "@/components/landing/FAQ";
@@ -23,11 +23,16 @@ function Index() {
     <div className="min-h-screen">
       <Nav />
       <Hero />
+      <div className="section-glow-divider" />
       <Problem />
       <Solution />
+      <div className="section-glow-divider" />
       <HowItWorks />
+      <div className="section-glow-divider" />
       <Features />
+      <StatsBar />
       <Integrations />
+      <div className="section-glow-divider" />
       <Pricing />
       <FAQ />
       <Footer />

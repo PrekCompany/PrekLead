@@ -11,7 +11,7 @@ import {
   SlidersHorizontal,
   Robot,
   Prohibit,
-} from "phosphor-react";
+} from "../components/PhosphorIcons";
 
 export const Route = createFileRoute("/app/inbox")({
   head: () => ({ meta: [{ title: "Сообщения — PREKLEAD" }] }),

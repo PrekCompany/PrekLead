@@ -2,30 +2,32 @@ import { Link } from "@tanstack/react-router";
 import { Logo } from "../Brand";
 import { SOCIAL_LINKS } from "../SocialIcons";
 
-const COMPANY_LINKS = [
-  { to: "/", label: "Компания" },
+interface FooterLink {
+  label: string;
+  to?: string;
+  hash?: string;
+  href?: string;
+}
+
+const COMPANY_LINKS: FooterLink[] = [
   { to: "/about", label: "О нас" },
-  { to: "/blog", label: "Блог" },
-  { to: "/contact", label: "Контакты" },
+  { to: "/support", label: "Контакты" },
 ];
 
-const PRODUCT_LINKS = [
-  { to: "/product", label: "Продукт" },
-  { to: "/features", label: "Возможности" },
+const PRODUCT_LINKS: FooterLink[] = [
+  { to: "/", hash: "features", label: "Возможности" },
   { to: "/pricing", label: "Тарифы" },
-  { to: "/integrations", label: "Интеграции" },
+  { to: "/", hash: "integrations", label: "Интеграции" },
 ];
 
-const SUPPORT_LINKS = [
-  { to: "/faq", label: "FAQ" },
-  { to: "/support", label: "Поддержка" },
-  { to: "/support/center", label: "Центр поддержки" },
-  { to: "/support/contact", label: "Связаться с нами" },
+const SUPPORT_LINKS: FooterLink[] = [
+  { to: "/", hash: "faq", label: "FAQ" },
+  { to: "/support", label: "Центр поддержки" },
+  { to: "/support", label: "Связаться с нами" },
   { href: "https://t.me/preklead_support", label: "Telegram Support" },
 ];
 
-const LEGAL_LINKS = [
-  { to: "/legal", label: "Правовая информация" },
+const LEGAL_LINKS: FooterLink[] = [
   { to: "/privacy", label: "Политика конфиденциальности" },
   { to: "/terms", label: "Условия использования" },
   { to: "/cookies", label: "Cookie Policy" },
@@ -37,7 +39,7 @@ export function Footer() {
       <div className="absolute inset-x-0 -top-px h-px bg-gradient-to-r from-transparent via-primary/40 to-transparent" />
 
       <div className="mx-auto max-w-6xl px-4 py-12">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-10">
           {/* Brand column */}
           <div className="flex flex-col gap-4">
             <Link to="/">
@@ -66,20 +68,24 @@ export function Footer() {
           </div>
 
           {/* Links columns */}
-          <div className="md:col-span-2 grid grid-cols-2 sm:grid-cols-4 gap-6">
+          <div className="md:col-span-2 grid grid-cols-2 sm:grid-cols-4 gap-4 md:gap-6">
             <div>
               <h4 className="text-xs font-semibold uppercase tracking-widest text-muted-foreground/60 mb-4">
                 Компания
               </h4>
               <nav className="flex flex-col gap-2.5">
                 {COMPANY_LINKS.map((l) => (
-                  <Link
-                    key={l.label}
-                    to={l.to}
-                    className="text-sm text-muted-foreground/70 hover:text-foreground transition-colors duration-200 w-fit"
-                  >
-                    {l.label}
-                  </Link>
+                  l.href ? (
+                    <a key={l.label} href={l.href} target="_blank" rel="noopener noreferrer"
+                      className="text-sm text-muted-foreground/70 hover:text-foreground transition-colors duration-200 w-fit">
+                      {l.label}
+                    </a>
+                  ) : (
+                    <Link key={l.label} to={l.to!} hash={l.hash}
+                      className="text-sm text-muted-foreground/70 hover:text-foreground transition-colors duration-200 w-fit">
+                      {l.label}
+                    </Link>
+                  )
                 ))}
               </nav>
             </div>
@@ -90,13 +96,17 @@ export function Footer() {
               </h4>
               <nav className="flex flex-col gap-2.5">
                 {PRODUCT_LINKS.map((l) => (
-                  <Link
-                    key={l.label}
-                    to={l.to}
-                    className="text-sm text-muted-foreground/70 hover:text-foreground transition-colors duration-200 w-fit"
-                  >
-                    {l.label}
-                  </Link>
+                  l.href ? (
+                    <a key={l.label} href={l.href} target="_blank" rel="noopener noreferrer"
+                      className="text-sm text-muted-foreground/70 hover:text-foreground transition-colors duration-200 w-fit">
+                      {l.label}
+                    </a>
+                  ) : (
+                    <Link key={l.label} to={l.to!} hash={l.hash}
+                      className="text-sm text-muted-foreground/70 hover:text-foreground transition-colors duration-200 w-fit">
+                      {l.label}
+                    </Link>
+                  )
                 ))}
               </nav>
             </div>
@@ -108,21 +118,13 @@ export function Footer() {
               <nav className="flex flex-col gap-2.5">
                 {SUPPORT_LINKS.map((l) => (
                   l.href ? (
-                    <a
-                      key={l.label}
-                      href={l.href}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="text-sm text-muted-foreground/70 hover:text-foreground transition-colors duration-200 w-fit"
-                    >
+                    <a key={l.label} href={l.href} target="_blank" rel="noopener noreferrer"
+                      className="text-sm text-muted-foreground/70 hover:text-foreground transition-colors duration-200 w-fit">
                       {l.label}
                     </a>
                   ) : (
-                    <Link
-                      key={l.label}
-                      to={l.to}
-                      className="text-sm text-muted-foreground/70 hover:text-foreground transition-colors duration-200 w-fit"
-                    >
+                    <Link key={l.label} to={l.to!} hash={l.hash}
+                      className="text-sm text-muted-foreground/70 hover:text-foreground transition-colors duration-200 w-fit">
                       {l.label}
                     </Link>
                   )
@@ -136,13 +138,17 @@ export function Footer() {
               </h4>
               <nav className="flex flex-col gap-2.5">
                 {LEGAL_LINKS.map((l) => (
-                  <Link
-                    key={l.label}
-                    to={l.to}
-                    className="text-sm text-muted-foreground/70 hover:text-foreground transition-colors duration-200 w-fit"
-                  >
-                    {l.label}
-                  </Link>
+                  l.href ? (
+                    <a key={l.label} href={l.href} target="_blank" rel="noopener noreferrer"
+                      className="text-sm text-muted-foreground/70 hover:text-foreground transition-colors duration-200 w-fit">
+                      {l.label}
+                    </a>
+                  ) : (
+                    <Link key={l.label} to={l.to!} hash={l.hash}
+                      className="text-sm text-muted-foreground/70 hover:text-foreground transition-colors duration-200 w-fit">
+                      {l.label}
+                    </Link>
+                  )
                 ))}
               </nav>
             </div>

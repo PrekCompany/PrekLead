@@ -1,6 +1,6 @@
 import { createFileRoute, Link, useNavigate } from "@tanstack/react-router";
 import { AuthLayout, Field } from "./auth";
-import { ArrowRight } from "phosphor-react";
+import { ArrowRight } from "../components/PhosphorIcons";
 
 export const Route = createFileRoute("/register")({
   head: () => ({ meta: [{ title: "Регистрация — PREKLEAD" }] }),

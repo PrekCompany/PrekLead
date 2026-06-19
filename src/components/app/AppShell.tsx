@@ -16,7 +16,8 @@ import {
   Robot,
   CreditCard,
   UserSwitch,
-} from "phosphor-react";
+  Settings,
+} from "../PhosphorIcons";
 import { useState } from "react";
 
 const ITEMS = [
