@@ -18,11 +18,11 @@ function CookiePolicyPage() {
         <div className="max-w-3xl mx-auto space-y-8 animate-fade-up px-4">
           <div>
             <div className="mb-6"><BackLink to="/" /></div>
-            <h1 className="text-3xl font-bold font-display">Cookie Policy</h1>
+            <h1 className="text-3xl font-bold tracking-tight">Cookie Policy</h1>
             <p className="text-muted-foreground text-sm mt-2">Last updated: June 2025</p>
           </div>
 
-      <section className="glass-strong rounded-2xl p-6 space-y-4">
+      <section className="card p-6 space-y-4">
         <h2 className="text-lg font-semibold">1. What Are Cookies</h2>
         <p className="text-sm text-muted-foreground leading-relaxed">
           Cookies are small text files stored on your device when you visit our website. They are widely used
@@ -31,7 +31,7 @@ function CookiePolicyPage() {
         </p>
       </section>
 
-      <section className="glass-strong rounded-2xl p-6 space-y-4">
+      <section className="card p-6 space-y-4">
         <h2 className="text-lg font-semibold">2. Types of Cookies We Use</h2>
         <p className="text-sm text-muted-foreground leading-relaxed">
           Essential cookies: Required for platform operation, authentication, and security. These cannot be disabled.
@@ -41,7 +41,7 @@ function CookiePolicyPage() {
         </p>
       </section>
 
-      <section className="glass-strong rounded-2xl p-6 space-y-4">
+      <section className="card p-6 space-y-4">
         <h2 className="text-lg font-semibold">3. Managing Your Preferences</h2>
         <p className="text-sm text-muted-foreground leading-relaxed">
           You can accept or reject non-essential cookies through our cookie consent banner.
@@ -51,7 +51,7 @@ function CookiePolicyPage() {
         </p>
       </section>
 
-      <section className="glass-strong rounded-2xl p-6 space-y-4">
+      <section className="card p-6 space-y-4">
         <h2 className="text-lg font-semibold">4. Third-Party Cookies</h2>
         <p className="text-sm text-muted-foreground leading-relaxed">
           Some cookies may be placed by third-party service providers integrated with our platform.
@@ -61,7 +61,7 @@ function CookiePolicyPage() {
         </p>
       </section>
 
-      <section className="glass-strong rounded-2xl p-6 space-y-4">
+      <section className="card p-6 space-y-4">
         <h2 className="text-lg font-semibold">5. Updates to This Policy</h2>
         <p className="text-sm text-muted-foreground leading-relaxed">
           We may update this Cookie Policy from time to time to reflect changes in technology, legislation,
@@ -109,8 +109,8 @@ export function CookieConsent() {
   };
 
   return (
-    <div className="fixed bottom-0 left-0 right-0 z-50 p-4">
-      <div className="max-w-5xl mx-auto glass-strong rounded-2xl p-5 space-y-4 animate-fade-up">
+      <div className="fixed bottom-0 left-0 right-0 z-50 p-4">
+      <div className="max-w-5xl mx-auto card p-5 space-y-4 animate-fade-up">
         {!settings ? (
           <>
             <div className="flex items-start gap-4">

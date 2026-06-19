@@ -16,11 +16,11 @@ function PrivacyPage() {
         <div className="max-w-3xl mx-auto space-y-8 animate-fade-up px-4">
           <div>
             <div className="mb-6"><BackLink to="/" /></div>
-            <h1 className="text-3xl font-bold font-display">Privacy Policy</h1>
+            <h1 className="text-3xl font-bold tracking-tight">Privacy Policy</h1>
             <p className="text-muted-foreground text-sm mt-2">Last updated: June 2025</p>
           </div>
 
-          <section className="glass-strong rounded-2xl p-6 space-y-4">
+          <section className="card p-6 space-y-4">
             <h2 className="text-lg font-semibold">1. Information We Collect</h2>
             <p className="text-sm text-muted-foreground leading-relaxed">
               We collect information you provide directly to us when registering for and using our services, including:
@@ -30,7 +30,7 @@ function PrivacyPage() {
             </p>
           </section>
 
-          <section className="glass-strong rounded-2xl p-6 space-y-4">
+          <section className="card p-6 space-y-4">
             <h2 className="text-lg font-semibold">2. How We Use Your Information</h2>
             <p className="text-sm text-muted-foreground leading-relaxed">
               We use collected information to provide, maintain, and improve our AI-powered communication services.
@@ -40,7 +40,7 @@ function PrivacyPage() {
             </p>
           </section>
 
-          <section className="glass-strong rounded-2xl p-6 space-y-4">
+          <section className="card p-6 space-y-4">
             <h2 className="text-lg font-semibold">3. Data Storage and Security</h2>
             <p className="text-sm text-muted-foreground leading-relaxed">
               Your data is stored using enterprise-grade cloud infrastructure including Cloudflare D1 database,
@@ -51,7 +51,7 @@ function PrivacyPage() {
             </p>
           </section>
 
-          <section className="glass-strong rounded-2xl p-6 space-y-4">
+          <section className="card p-6 space-y-4">
             <h2 className="text-lg font-semibold">4. Data Sharing and Disclosure</h2>
             <p className="text-sm text-muted-foreground leading-relaxed">
               We do not sell, trade, or rent your personal information to third parties. Data may be shared with
@@ -61,7 +61,7 @@ function PrivacyPage() {
             </p>
           </section>
 
-          <section className="glass-strong rounded-2xl p-6 space-y-4">
+          <section className="card p-6 space-y-4">
             <h2 className="text-lg font-semibold">5. AI and Automated Processing</h2>
             <p className="text-sm text-muted-foreground leading-relaxed">
               Our platform utilizes artificial intelligence to analyze communication content, classify messages,
@@ -72,7 +72,7 @@ function PrivacyPage() {
             </p>
           </section>
 
-          <section className="glass-strong rounded-2xl p-6 space-y-4">
+          <section className="card p-6 space-y-4">
             <h2 className="text-lg font-semibold">6. Third-Party Integrations</h2>
             <p className="text-sm text-muted-foreground leading-relaxed">
               Our platform integrates with third-party communication channels including Telegram, with additional
@@ -83,7 +83,7 @@ function PrivacyPage() {
             </p>
           </section>
 
-          <section className="glass-strong rounded-2xl p-6 space-y-4">
+          <section className="card p-6 space-y-4">
             <h2 className="text-lg font-semibold">7. Cookies and Tracking</h2>
             <p className="text-sm text-muted-foreground leading-relaxed">
               We use essential cookies and similar technologies to maintain session state, remember preferences,
@@ -94,7 +94,7 @@ function PrivacyPage() {
             </p>
           </section>
 
-          <section className="glass-strong rounded-2xl p-6 space-y-4">
+          <section className="card p-6 space-y-4">
             <h2 className="text-lg font-semibold">8. Your Rights</h2>
             <p className="text-sm text-muted-foreground leading-relaxed">
               You have the right to access, correct, or delete your personal data. You may request a complete export
@@ -105,7 +105,7 @@ function PrivacyPage() {
             </p>
           </section>
 
-          <section className="glass-strong rounded-2xl p-6 space-y-4">
+          <section className="card p-6 space-y-4">
             <h2 className="text-lg font-semibold">9. Contact Information</h2>
             <p className="text-sm text-muted-foreground leading-relaxed">
               For privacy-related inquiries, data requests, or concerns about this policy, please contact us at

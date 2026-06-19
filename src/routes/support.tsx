@@ -19,11 +19,11 @@ function SupportPage() {
         <div className="mx-auto max-w-4xl px-4">
           <div className="mb-6"><BackLink to="/" /></div>
           <div className="text-xs font-semibold uppercase tracking-widest text-primary mb-3">Поддержка</div>
-          <h1 className="font-display text-4xl md:text-5xl font-semibold text-gradient">Мы рядом 24/7</h1>
+          <h1 className="text-3xl md:text-4xl font-semibold tracking-tight">Мы рядом 24/7</h1>
 
           <div className="grid md:grid-cols-[1fr_320px] gap-6 mt-10">
             <form
-              className="glass rounded-2xl p-6 space-y-4"
+              className="card p-6 space-y-4"
               onSubmit={(e) => { e.preventDefault(); setSent(true); }}
             >
               <h2 className="font-display text-xl font-semibold">Напишите нам</h2>
@@ -35,14 +35,14 @@ function SupportPage() {
               </button>
             </form>
             <div className="space-y-3">
-              <a href="mailto:support@preklead.ai" className="glass rounded-2xl p-5 flex items-center gap-3 hover:border-primary/40 transition-colors">
+              <a href="mailto:support@preklead.ai" className="card p-5 flex items-center gap-3 hover:bg-accent transition-colors">
                 <div className="size-10 rounded-xl bg-primary/15 grid place-items-center text-primary"><Envelope size={16} /></div>
                 <div>
                   <div className="text-sm font-semibold">Email</div>
                   <div className="text-xs text-muted-foreground">support@preklead.ai</div>
                 </div>
               </a>
-              <a href="https://t.me/prekleadbot" target="_blank" rel="noreferrer" className="glass rounded-2xl p-5 flex items-center gap-3 hover:border-primary/40 transition-colors">
+              <a href="https://t.me/prekleadbot" target="_blank" rel="noreferrer" className="card p-5 flex items-center gap-3 hover:bg-accent transition-colors">
                 <div className="size-10 rounded-xl bg-primary/15 grid place-items-center text-primary"><ChatCircle size={16} /></div>
                 <div>
                   <div className="text-sm font-semibold">Telegram bot</div>

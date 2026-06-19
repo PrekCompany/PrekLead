@@ -16,11 +16,11 @@ function TermsPage() {
         <div className="max-w-3xl mx-auto space-y-8 animate-fade-up px-4">
           <div>
             <div className="mb-6"><BackLink to="/" /></div>
-            <h1 className="text-3xl font-bold font-display">Terms of Service</h1>
+            <h1 className="text-3xl font-bold tracking-tight">Terms of Service</h1>
             <p className="text-muted-foreground text-sm mt-2">Last updated: June 2025</p>
           </div>
 
-          <section className="glass-strong rounded-2xl p-6 space-y-4">
+          <section className="card p-6 space-y-4">
             <h2 className="text-lg font-semibold">1. Acceptance of Terms</h2>
             <p className="text-sm text-muted-foreground leading-relaxed">
               By accessing or using PREKLEAD services, you agree to be bound by these Terms of Service.
@@ -30,7 +30,7 @@ function TermsPage() {
             </p>
           </section>
 
-          <section className="glass-strong rounded-2xl p-6 space-y-4">
+          <section className="card p-6 space-y-4">
             <h2 className="text-lg font-semibold">2. Service Description</h2>
             <p className="text-sm text-muted-foreground leading-relaxed">
               PREKLEAD provides AI-powered communication automation, lead management, customer relationship management,
@@ -41,7 +41,7 @@ function TermsPage() {
             </p>
           </section>
 
-          <section className="glass-strong rounded-2xl p-6 space-y-4">
+          <section className="card p-6 space-y-4">
             <h2 className="text-lg font-semibold">3. User Accounts</h2>
             <p className="text-sm text-muted-foreground leading-relaxed">
               You are responsible for maintaining the confidentiality of your account credentials and for all
@@ -51,7 +51,7 @@ function TermsPage() {
             </p>
           </section>
 
-          <section className="glass-strong rounded-2xl p-6 space-y-4">
+          <section className="card p-6 space-y-4">
             <h2 className="text-lg font-semibold">4. Subscription and Billing</h2>
             <p className="text-sm text-muted-foreground leading-relaxed">
               Subscription fees are billed in advance on a monthly or annual basis as selected during registration.
@@ -61,7 +61,7 @@ function TermsPage() {
             </p>
           </section>
 
-          <section className="glass-strong rounded-2xl p-6 space-y-4">
+          <section className="card p-6 space-y-4">
             <h2 className="text-lg font-semibold">5. Acceptable Use</h2>
             <p className="text-sm text-muted-foreground leading-relaxed">
               You agree not to use the service for any unlawful purpose or in violation of any applicable laws
@@ -71,7 +71,7 @@ function TermsPage() {
             </p>
           </section>
 
-          <section className="glass-strong rounded-2xl p-6 space-y-4">
+          <section className="card p-6 space-y-4">
             <h2 className="text-lg font-semibold">6. Limitation of Liability</h2>
             <p className="text-sm text-muted-foreground leading-relaxed">
               PREKLEAD shall not be liable for any indirect, incidental, special, consequential, or punitive damages
@@ -81,7 +81,7 @@ function TermsPage() {
             </p>
           </section>
 
-          <section className="glass-strong rounded-2xl p-6 space-y-4">
+          <section className="card p-6 space-y-4">
             <h2 className="text-lg font-semibold">7. Intellectual Property</h2>
             <p className="text-sm text-muted-foreground leading-relaxed">
               The PREKLEAD platform, including its code, design, branding, and AI models, is protected by
@@ -91,7 +91,7 @@ function TermsPage() {
             </p>
           </section>
 
-          <section className="glass-strong rounded-2xl p-6 space-y-4">
+          <section className="card p-6 space-y-4">
             <h2 className="text-lg font-semibold">8. Data Protection</h2>
             <p className="text-sm text-muted-foreground leading-relaxed">
               We process your data in accordance with our Privacy Policy and applicable data protection laws.
@@ -101,7 +101,7 @@ function TermsPage() {
             </p>
           </section>
 
-          <section className="glass-strong rounded-2xl p-6 space-y-4">
+          <section className="card p-6 space-y-4">
             <h2 className="text-lg font-semibold">9. Termination</h2>
             <p className="text-sm text-muted-foreground leading-relaxed">
               Either party may terminate this agreement at any time. Upon termination, your access to the service
@@ -111,7 +111,7 @@ function TermsPage() {
             </p>
           </section>
 
-          <section className="glass-strong rounded-2xl p-6 space-y-4">
+          <section className="card p-6 space-y-4">
             <h2 className="text-lg font-semibold">10. Contact</h2>
             <p className="text-sm text-muted-foreground leading-relaxed">
               For questions about these terms, please contact us at legal@preklead.com.

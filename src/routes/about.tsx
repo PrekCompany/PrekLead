@@ -21,7 +21,7 @@ function AboutPage() {
         <div className="mx-auto max-w-3xl px-4">
           <div className="mb-6"><BackLink to="/" /></div>
           <div className="text-xs font-semibold uppercase tracking-widest text-primary mb-3">О нас</div>
-          <h1 className="font-display text-4xl md:text-6xl font-semibold text-gradient leading-tight">
+          <h1 className="text-3xl md:text-5xl font-semibold tracking-tight leading-tight">
             Мы строим AI, который продаёт за вас
           </h1>
           <p className="mt-6 text-lg text-muted-foreground">
@@ -35,8 +35,8 @@ function AboutPage() {
               { v: "2.4M", l: "сообщений обработано AI" },
               { v: "34%", l: "средний рост конверсии" },
             ].map((s) => (
-              <div key={s.l} className="glass rounded-2xl p-5">
-                <div className="font-display text-3xl font-semibold text-gradient-primary">{s.v}</div>
+              <div key={s.l} className="card p-5">
+                <div className="text-2xl font-semibold text-primary">{s.v}</div>
                 <div className="text-sm text-muted-foreground mt-1">{s.l}</div>
               </div>
             ))}
